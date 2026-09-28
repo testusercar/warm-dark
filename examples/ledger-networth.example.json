@@ -1,0 +1,130 @@
+{
+  "version": 2,
+  "agent": "Ledger",
+  "domain": "Finance",
+  "date": "Sep 27",
+  "footer": "Finance-xai · Wealthsimple · Coda · manual notes",
+  "outdir": "out/ledger-networth",
+  "cards": [
+    {
+      "type": "multi_institution_nw",
+      "slug": "01-net-worth-buckets",
+      "title": "Net worth",
+      "dek": "Every bucket at Sunday close · your ownership share",
+      "total": {
+        "label": "Current net worth",
+        "value": "C$366,236",
+        "num": 366236,
+        "sub": "Home equity held out until closing"
+      },
+      "rows": [
+        {"label": "Liquid CAD", "sub": "Wealthsimple cash + crypto", "value": "C$110,072", "num": 110072},
+        {"label": "USD cash", "sub": "US$10,397 @ 1.36", "value": "C$14,140", "num": 14140},
+        {"label": "Gold", "sub": "4.942 oz", "value": "C$29,951", "num": 29951},
+        {"label": "Manulife notes", "sub": "3 notes · manual", "value": "C$70,806", "num": 70806},
+        {"label": "Maxxit", "sub": "phantom · 8× CY profit", "share": "3% stake", "value": "C$144,000", "num": 144000},
+        {"label": "Tennex", "sub": "EV = 0 for now", "share": "9% stake", "value": "C$0", "num": 0},
+        {"label": "Credit card", "sub": "due Oct 3", "value": "−C$2,733", "num": -2733},
+        {"label": "Home equity", "sub": "nets CIBC joint + mortgage", "share": "45% share", "value": "C$197,280", "num": 197280, "included": false}
+      ],
+      "excluded_label": "Not in current net worth",
+      "excluded_right": "pre-closing",
+      "all_in": {"label": "All-in with home equity", "value": "C$563,516", "num": 563516}
+    },
+    {
+      "type": "cashflow_sankey",
+      "slug": "02-cashflow",
+      "title": "September cashflow",
+      "dek": "Sep 1–27 · net pay in, where it went, where it landed",
+      "value": "C$4,722",
+      "delta": {"value": "+C$610", "note": "saved vs August"},
+      "aside": {"label": "Saving rate", "value": "46%", "tone": "ink"},
+      "stages": ["Income", "Where it went", "Landed in"],
+      "nodes": [
+        {"id": "pay", "label": "Net pay", "value": "C$9,850"},
+        {"id": "interest", "label": "Interest", "value": "C$352"},
+        {"id": "rent", "label": "Rent", "value": "C$2,650"},
+        {"id": "groceries", "label": "Groceries", "value": "C$1,120"},
+        {"id": "transport", "label": "Transport", "value": "C$420"},
+        {"id": "dining", "label": "Dining", "value": "C$380"},
+        {"id": "other", "label": "Other spend", "value": "C$910"},
+        {"id": "saved", "label": "Saved", "value": "C$4,722", "tone": "good"},
+        {"id": "chequing", "label": "Chequing", "value": "C$2,650"},
+        {"id": "card", "label": "Credit card", "value": "C$2,830"},
+        {"id": "mm", "label": "Money market", "value": "C$3,000"},
+        {"id": "savings", "label": "Savings", "value": "C$1,722"}
+      ],
+      "links": [
+        {"source": "pay", "target": "rent", "num": 2650},
+        {"source": "pay", "target": "groceries", "num": 1120},
+        {"source": "pay", "target": "transport", "num": 420},
+        {"source": "pay", "target": "dining", "num": 380},
+        {"source": "pay", "target": "other", "num": 910},
+        {"source": "pay", "target": "saved", "num": 4370},
+        {"source": "interest", "target": "saved", "num": 352},
+        {"source": "rent", "target": "chequing", "num": 2650},
+        {"source": "groceries", "target": "card", "num": 1120},
+        {"source": "transport", "target": "card", "num": 420},
+        {"source": "dining", "target": "card", "num": 380},
+        {"source": "other", "target": "card", "num": 910},
+        {"source": "saved", "target": "mm", "num": 3000},
+        {"source": "saved", "target": "savings", "num": 1722}
+      ]
+    },
+    {
+      "type": "nw_delta_weekly",
+      "slug": "03-nw-this-week",
+      "title": "Net worth",
+      "dek": "Sunday close · home equity held out until closing",
+      "value": "C$366,236",
+      "num": 366236,
+      "delta": {"value": "+C$3,412", "note": "+0.9% vs last Sunday"},
+      "polarity": "up_good",
+      "prior": {"label": "Sep 20", "value": "C$362,824", "num": 362824},
+      "spark": {
+        "values": [351900, 353420, 352780, 355610, 356940, 358200, 357480, 359960, 360710, 361390, 362824, 366236],
+        "x": ["Jul 12", "", "", "", "", "", "", "", "", "", "", "Sep 27"]
+      },
+      "drivers_label": "What moved it",
+      "drivers": [
+        {"label": "Cash saved", "sub": "net pay in, spend out", "value": "+C$3,500", "num": 3500},
+        {"label": "Manulife notes", "sub": "accrual + MTM", "value": "+C$324", "num": 324},
+        {"label": "Gold", "sub": "spot −C$83/oz", "value": "−C$412", "num": -412}
+      ]
+    },
+    {
+      "type": "manulife_notes_strip",
+      "slug": "04-manulife-notes",
+      "title": "Manulife notes",
+      "dek": "Three principal-protected notes · entered by hand",
+      "value_label": "Best-known value",
+      "value": "C$70,806",
+      "delta": {"value": "+C$806", "note": "vs C$70,000 principal"},
+      "context": "MTM on 2 of 3 · the third at principal + accrued",
+      "notes": [
+        {"name": "TSX 60 MPN", "sub": "Series 12", "principal": {"value": "C$25,000", "num": 25000},
+         "accrued": {"value": "C$612", "num": 612}, "mtm": {"value": "C$25,840", "num": 25840}, "maturity": "Mar 2028"},
+        {"name": "Canadian Banks", "sub": "Series 7", "principal": {"value": "C$25,000", "num": 25000},
+         "accrued": {"value": "C$488", "num": 488}, "mtm": {"value": "C$24,610", "num": 24610}, "maturity": "Nov 2027"},
+        {"name": "Global Dividend", "sub": "Series 3", "principal": {"value": "C$20,000", "num": 20000},
+         "accrued": {"value": "C$356", "num": 356}, "mtm": null, "maturity": "Jun 2029"}
+      ],
+      "note": "Manual from Manulife statements · no Plaid feed · MTM as of Sep 15"
+    },
+    {
+      "type": "home_equity_card",
+      "slug": "05-home-equity",
+      "title": "Home equity",
+      "dek": "Westway · house assumed ~C$1.2M until closing",
+      "status": "Pre-closing",
+      "value": "C$197,280",
+      "num": 197280,
+      "equity_pct": 45,
+      "equity_label": "Your ownership",
+      "equity_source": "Westway · Coda",
+      "property": {"label": "Property value", "sub": "assumed", "value": "C$1,200,000", "num": 1200000},
+      "mortgage": {"label": "Mortgage share", "sub": "CIBC", "value": "C$780,000", "num": 780000},
+      "joint_cash": {"label": "Joint cash share", "sub": "CIBC joint", "value": "C$18,400", "num": 18400}
+    }
+  ]
+}

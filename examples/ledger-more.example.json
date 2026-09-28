@@ -1,0 +1,105 @@
+{
+  "version": 2,
+  "agent": "Ledger",
+  "domain": "Finance",
+  "date": "Sep 27",
+  "footer": "Finance-xai · Wealthsimple · read-only",
+  "outdir": "out/ledger-more",
+  "cards": [
+    {
+      "type": "holdings",
+      "slug": "holdings",
+      "title": "Holdings",
+      "dek": "Invested and fund balances · CAD",
+      "columns": [
+        "Holding",
+        "Weight",
+        "Value · P/L"
+      ],
+      "rows": [
+        {
+          "name": "Money market",
+          "sub": "fund · 4.1% yield",
+          "value": "C$61,501",
+          "weight": 65,
+          "pl": "+C$212"
+        },
+        {
+          "name": "Gold",
+          "sub": "4.942 oz",
+          "value": "C$29,951",
+          "weight": 32,
+          "pl": "−C$1,938"
+        },
+        {
+          "name": "Bitcoin",
+          "sub": "0.0214 BTC",
+          "value": "C$2,106",
+          "weight": 2.2,
+          "pl": "+C$218"
+        },
+        {
+          "name": "Ether",
+          "sub": "0.241 ETH",
+          "value": "C$758",
+          "weight": 0.8,
+          "pl": "−C$25"
+        }
+      ],
+      "total": {
+        "label": "Total",
+        "value": "C$94,316",
+        "pl": "−C$1,533",
+        "sub": "unrealized"
+      },
+      "facts": [
+        {
+          "label": "Cash share",
+          "value": "65%"
+        },
+        {
+          "label": "Gold vs cost",
+          "value": "C$29,951",
+          "delta": "−6.1%"
+        }
+      ]
+    },
+    {
+      "type": "allocation",
+      "slug": "where-cad-sits",
+      "style": "donut",
+      "title": "Where CAD sits",
+      "dek": "C$140,022 across five accounts",
+      "total": "C$140,022",
+      "total_label": "CAD assets",
+      "items": [
+        {
+          "label": "Money market",
+          "num": 61501,
+          "value": "C$61,501"
+        },
+        {
+          "label": "Savings",
+          "num": 40017,
+          "value": "C$40,017"
+        },
+        {
+          "label": "Gold",
+          "num": 29951,
+          "value": "C$29,951"
+        },
+        {
+          "label": "Chequing",
+          "num": 5690,
+          "value": "C$5,690"
+        },
+        {
+          "label": "Crypto",
+          "num": 2864,
+          "value": "C$2,864"
+        }
+      ],
+      "note": "USD cash US$10,397 is held separately and not converted."
+    }
+  ]
+}

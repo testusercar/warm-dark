@@ -1,0 +1,373 @@
+{
+  "version": 2,
+  "agent": "Ledger",
+  "domain": "Finance",
+  "date": "Sep 27",
+  "footer": "Finance-xai · Wealthsimple · read-only",
+  "outdir": "out/ledger-sunday",
+  "cards": [
+    {
+      "type": "cover",
+      "slug": "00-cover",
+      "kicker": "Week 39 · Sunday close",
+      "title": "Sunday ledger",
+      "dek": "Assets up, gold still under water, spend below typical.",
+      "items": [
+        {
+          "title": "CAD assets",
+          "note": "five accounts, net of card C$137,289",
+          "value": "C$140,022",
+          "delta": "+0.9%"
+        },
+        {
+          "title": "Gold vs break-even",
+          "note": "4.942 oz · needs +6.5% to break even",
+          "value": "−6.1%",
+          "delta": {
+            "value": "C$392/oz",
+            "dir": "down",
+            "good": false
+          }
+        },
+        {
+          "title": "Wealthsimple roster",
+          "note": "balance sheet, all connected",
+          "value": "C$137,289"
+        },
+        {
+          "title": "Spend this week",
+          "note": "23 transactions · Costco the big one",
+          "value": "C$612",
+          "delta": {
+            "value": "−14%",
+            "polarity": "down_good"
+          }
+        }
+      ],
+      "count_label": "4 cards follow",
+      "right_label": "swipe →"
+    },
+    {
+      "type": "kpi",
+      "slug": "01-cad-assets",
+      "title": "CAD assets",
+      "dek": "Five Wealthsimple CAD accounts at Sunday close",
+      "value": "C$140,022",
+      "delta": {
+        "value": "+C$1,204",
+        "note": "vs last Sunday"
+      },
+      "context": "Net of the card: **C$137,289**",
+      "composition_label": "Where it sits",
+      "composition": [
+        {
+          "label": "Money market",
+          "num": 61501
+        },
+        {
+          "label": "Savings",
+          "num": 40017
+        },
+        {
+          "label": "Gold",
+          "num": 29951
+        },
+        {
+          "label": "Chequing",
+          "num": 5690
+        },
+        {
+          "label": "Crypto",
+          "num": 2864
+        }
+      ],
+      "facts": [
+        {
+          "label": "Card owed",
+          "value": "−C$2,733",
+          "sub": "statement Oct 3"
+        },
+        {
+          "label": "USD cash",
+          "value": "US$10,397",
+          "sub": "held separately"
+        }
+      ]
+    },
+    {
+      "type": "breakeven",
+      "slug": "02-gold-breakeven",
+      "title": "Gold vs break-even",
+      "dek": "4.942 oz · CAD per oz, weekly close",
+      "value": "−6.1%",
+      "delta": {
+        "value": "C$392/oz",
+        "dir": "down",
+        "good": false,
+        "note": "under your break-even"
+      },
+      "price": {
+        "name": "spot",
+        "label": "C$6,061",
+        "values": [
+          6150,
+          6185,
+          6210,
+          6240,
+          6205,
+          6280,
+          6330,
+          6310,
+          6385,
+          6420,
+          6395,
+          6470,
+          6510,
+          6490,
+          6540,
+          6600,
+          6655,
+          6620,
+          6710,
+          6780,
+          6805,
+          6740,
+          6698,
+          6560,
+          6390,
+          6205,
+          6061
+        ],
+        "x": [
+          "Mar 29",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "May 31",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "Aug 2",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "Sep 27"
+        ],
+        "x_ticks": [
+          0,
+          9,
+          18,
+          26
+        ]
+      },
+      "steps": [
+        {
+          "at": 2,
+          "value": 6210,
+          "label": "buy 2.0 oz"
+        },
+        {
+          "at": 14,
+          "value": 6351,
+          "label": "+1.5 oz"
+        },
+        {
+          "at": 22,
+          "value": 6453,
+          "label": "+1.442 oz"
+        }
+      ],
+      "annotations": [
+        {
+          "at": 20,
+          "text": "Peak C$6,805",
+          "sub": "Aug 16 · 5.5% over break-even",
+          "positive": true
+        }
+      ],
+      "be_label": "C$6,453",
+      "be_name": "break-even",
+      "fmt": "{:,.0f}",
+      "axis_fmt": "{:,.0f}",
+      "facts": [
+        {
+          "label": "Holding",
+          "value": "4.942 oz"
+        },
+        {
+          "label": "Cost",
+          "value": "C$31,889"
+        },
+        {
+          "label": "Market",
+          "value": "C$29,951",
+          "delta": {
+            "value": "−C$1,938",
+            "note": "vs cost"
+          }
+        }
+      ]
+    },
+    {
+      "type": "roster",
+      "slug": "03-roster",
+      "title": "Wealthsimple",
+      "dek": "Balance sheet · all accounts connected",
+      "groups": [
+        {
+          "label": "Cash",
+          "subtotal": "C$107,208",
+          "items": [
+            {
+              "label": "Money market",
+              "value": "C$61,501",
+              "num": 61501
+            },
+            {
+              "label": "Savings",
+              "value": "C$40,017",
+              "num": 40017
+            },
+            {
+              "label": "Chequing",
+              "value": "C$5,690",
+              "num": 5690
+            }
+          ]
+        },
+        {
+          "label": "Invested",
+          "subtotal": "C$32,815",
+          "items": [
+            {
+              "label": "Gold",
+              "note": "4.942 oz",
+              "value": "C$29,951",
+              "num": 29951
+            },
+            {
+              "label": "Crypto",
+              "value": "C$2,864",
+              "num": 2864
+            }
+          ]
+        },
+        {
+          "label": "Owed",
+          "items": [
+            {
+              "label": "Credit card",
+              "note": "due Oct 3",
+              "value": "−C$2,733",
+              "num": -2733
+            }
+          ]
+        }
+      ],
+      "total": {
+        "label": "Net CAD",
+        "value": "C$137,289",
+        "sub": "C$140,022 assets − C$2,733 card"
+      },
+      "aside": {
+        "label": "USD cash",
+        "note": "not converted",
+        "value": "US$10,397"
+      }
+    },
+    {
+      "type": "spend",
+      "slug": "04-spend",
+      "title": "Spend this week",
+      "dek": "Sep 21–27 · Wealthsimple card + chequing",
+      "value": "C$612",
+      "delta": {
+        "value": "−14%",
+        "polarity": "down_good",
+        "note": "vs 8-week typical"
+      },
+      "days": [
+        42,
+        118,
+        36,
+        64,
+        188,
+        96,
+        68
+      ],
+      "day_labels": [
+        "M",
+        "T",
+        "W",
+        "T",
+        "F",
+        "S",
+        "S"
+      ],
+      "rows_label": "Top merchants",
+      "rows_right": "C$468 of C$612",
+      "merchants": [
+        {
+          "name": "Costco",
+          "sub": "groceries",
+          "value": "C$188",
+          "num": 188
+        },
+        {
+          "name": "Amazon",
+          "sub": "3 orders",
+          "value": "C$96",
+          "num": 96
+        },
+        {
+          "name": "Esso",
+          "sub": "fuel",
+          "value": "C$72",
+          "num": 72
+        },
+        {
+          "name": "Uber Eats",
+          "sub": "2 orders",
+          "value": "C$64",
+          "num": 64
+        },
+        {
+          "name": "Shoppers",
+          "sub": "pharmacy",
+          "value": "C$48",
+          "num": 48
+        }
+      ],
+      "facts": [
+        {
+          "label": "Transactions",
+          "value": "23"
+        },
+        {
+          "label": "Biggest day",
+          "value": "Friday",
+          "sub": "C$188 · Costco"
+        },
+        {
+          "label": "Card owed",
+          "value": "−C$2,733"
+        }
+      ]
+    }
+  ],
+  "series": true
+}

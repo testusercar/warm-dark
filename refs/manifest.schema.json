@@ -1,0 +1,1580 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://fleet.local/aaron-fleet-comms/manifest.schema.json",
+  "title": "Warm Dark card manifest",
+  "description": "One manifest renders one or more separate PNG cards. v2 is a superset of v1: v1 manifests (hero/metric/alert/bullets/watch) validate and render unchanged. Unknown extra fields are ignored so agents can carry notes.",
+  "type": "object",
+  "required": [
+    "cards"
+  ],
+  "properties": {
+    "version": {
+      "type": "integer",
+      "enum": [
+        1,
+        2
+      ],
+      "default": 2
+    },
+    "agent": {
+      "type": "string",
+      "description": "Bot name shown top-left, e.g. Ledger, Booth, Radar, Jeeves, Vitals, Max, Scout."
+    },
+    "domain": {
+      "type": "string",
+      "description": "Domain after the dot, e.g. Finance, TPT store, Politics."
+    },
+    "date": {
+      "type": "string",
+      "description": "Short date top-right, e.g. \"Sep 27\"."
+    },
+    "footer": {
+      "type": "string",
+      "description": "Bottom-left source whisper. Default \"fleet brief\"."
+    },
+    "outdir": {
+      "type": "string",
+      "description": "Where PNGs go. Relative paths resolve against the manifest file."
+    },
+    "scale": {
+      "type": "number",
+      "minimum": 1,
+      "maximum": 3,
+      "default": 1,
+      "description": "1 = 810x1146 (default), 2 = retina."
+    },
+    "series": {
+      "type": "boolean",
+      "description": "Show series dots bottom-right. Defaults to true when a cover card is present."
+    },
+    "cards": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/card"
+      }
+    }
+  },
+  "$defs": {
+    "text": {
+      "type": "string",
+      "description": "Supports **strong** (ink, semibold) and {{+12%}} inline deltas (olive if +, ink if −)."
+    },
+    "delta": {
+      "description": "\"+12%\" or an object. Sign drives the arrow; olive only when the change is good.",
+      "oneOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "object",
+          "required": [
+            "value"
+          ],
+          "properties": {
+            "value": {
+              "type": "string"
+            },
+            "note": {
+              "type": "string",
+              "description": "Muted text after the delta, e.g. \"vs last week\"."
+            },
+            "polarity": {
+              "enum": [
+                "up_good",
+                "down_good",
+                "neutral"
+              ],
+              "default": "up_good",
+              "description": "down_good: a decrease is good (olive with ▼). neutral: never olive."
+            },
+            "good": {
+              "type": "boolean",
+              "description": "Force good/bad when polarity is not enough."
+            },
+            "dir": {
+              "enum": [
+                "up",
+                "down",
+                "flat"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "fact": {
+      "type": "object",
+      "required": [
+        "label",
+        "value"
+      ],
+      "properties": {
+        "label": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        },
+        "sub": {
+          "type": "string"
+        },
+        "delta": {
+          "$ref": "#/$defs/delta"
+        },
+        "tone": {
+          "enum": [
+            "ink",
+            "muted",
+            "positive"
+          ]
+        }
+      }
+    },
+    "facts": {
+      "type": "array",
+      "maxItems": 4,
+      "items": {
+        "$ref": "#/$defs/fact"
+      }
+    },
+    "numbers": {
+      "type": "array",
+      "items": {
+        "type": [
+          "number",
+          "null"
+        ]
+      }
+    },
+    "series": {
+      "type": "object",
+      "required": [
+        "values"
+      ],
+      "properties": {
+        "values": {
+          "$ref": "#/$defs/numbers"
+        },
+        "role": {
+          "enum": [
+            "current",
+            "prior",
+            "target",
+            "reference",
+            "projection"
+          ],
+          "default": "current"
+        },
+        "name": {
+          "type": "string",
+          "description": "Direct label under the end value, e.g. \"September\"."
+        },
+        "label": {
+          "type": "string",
+          "description": "End value text; defaults to fmt(last value)."
+        },
+        "smooth": {
+          "type": "boolean"
+        },
+        "end_label": {
+          "type": "boolean"
+        }
+      }
+    },
+    "annotation": {
+      "type": "object",
+      "required": [
+        "at",
+        "text"
+      ],
+      "properties": {
+        "at": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Index into the values array."
+        },
+        "text": {
+          "type": "string"
+        },
+        "sub": {
+          "type": "string"
+        },
+        "positive": {
+          "type": "boolean"
+        },
+        "series": {
+          "type": "string"
+        }
+      }
+    },
+    "partial": {
+      "description": "Marks partial data; renders a hollow ring + note in the footer whisper.",
+      "oneOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "ok": {
+              "type": "integer"
+            },
+            "of": {
+              "type": "integer"
+            },
+            "note": {
+              "type": "string"
+            }
+          }
+        }
+      ]
+    },
+    "card": {
+      "type": "object",
+      "required": [
+        "type"
+      ],
+      "properties": {
+        "type": {
+          "enum": [
+            "kpi",
+            "metric",
+            "hero_metric",
+            "big_number",
+            "scoreboard",
+            "dual_kpi",
+            "versus",
+            "line",
+            "timeseries",
+            "dual_line",
+            "trend",
+            "area",
+            "spark",
+            "annotated",
+            "bars",
+            "bar",
+            "stacked",
+            "category",
+            "brief",
+            "bullets",
+            "watch",
+            "list",
+            "alert",
+            "incident",
+            "status",
+            "gap",
+            "before_after",
+            "target_gap",
+            "allocation",
+            "composition",
+            "donut",
+            "share",
+            "timeline",
+            "agenda",
+            "upcoming",
+            "cadence",
+            "holdings",
+            "portfolio",
+            "positions",
+            "roster",
+            "balance_sheet",
+            "accounts",
+            "spend",
+            "merchants",
+            "spend_digest",
+            "breakeven",
+            "break_even",
+            "asset_vs_cost",
+            "vitals",
+            "health",
+            "sleep",
+            "radar",
+            "news",
+            "headlines",
+            "experiment",
+            "ab",
+            "ab_test",
+            "progress",
+            "north_star",
+            "goal",
+            "empty",
+            "no_data",
+            "pending",
+            "cover",
+            "digest",
+            "series_cover",
+            "decision",
+            "ask",
+            "approval",
+            "heatmap",
+            "calendar",
+            "cadence_grid",
+            "funnel",
+            "conversion",
+            "hero",
+            "photo",
+            "multi_institution_nw",
+            "nw_buckets",
+            "networth_buckets",
+            "institution_nw",
+            "cashflow_sankey",
+            "sankey",
+            "cashflow",
+            "flow",
+            "nw_delta_weekly",
+            "nw_delta",
+            "networth_delta",
+            "nw_weekly",
+            "manulife_notes_strip",
+            "notes_strip",
+            "structured_notes",
+            "manulife_notes",
+            "home_equity_card",
+            "home_equity",
+            "property_equity"
+          ]
+        },
+        "slug": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9._-]+$",
+          "description": "File name without .png."
+        },
+        "title": {
+          "$ref": "#/$defs/text"
+        },
+        "dek": {
+          "$ref": "#/$defs/text"
+        },
+        "format": {
+          "enum": [
+            "portrait",
+            "landscape"
+          ],
+          "default": "portrait"
+        },
+        "footer": {
+          "type": "string"
+        },
+        "agent": {
+          "type": "string"
+        },
+        "domain": {
+          "type": "string"
+        },
+        "date": {
+          "type": "string"
+        },
+        "partial": {
+          "$ref": "#/$defs/partial"
+        },
+        "image": {
+          "type": "string"
+        },
+        "facts": {
+          "$ref": "#/$defs/facts"
+        },
+        "delta": {
+          "$ref": "#/$defs/delta"
+        },
+        "fmt": {
+          "type": "string",
+          "description": "Python format string, e.g. \"C${:,.0f}\"; \"{:k}\" = compact (4.2k)."
+        },
+        "axis_fmt": {
+          "type": "string"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "enum": [
+                  "kpi",
+                  "metric",
+                  "hero_metric",
+                  "big_number"
+                ]
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "value"
+            ],
+            "properties": {
+              "value": {
+                "type": "string"
+              },
+              "context": {
+                "$ref": "#/$defs/text"
+              },
+              "spark": {
+                "oneOf": [
+                  {
+                    "$ref": "#/$defs/numbers"
+                  },
+                  {
+                    "type": "object",
+                    "required": [
+                      "values"
+                    ]
+                  }
+                ]
+              },
+              "composition": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "label",
+                    "num"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "enum": [
+                  "scoreboard",
+                  "dual_kpi",
+                  "versus"
+                ]
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "current",
+              "prior"
+            ],
+            "properties": {
+              "rows": {
+                "type": "array",
+                "maxItems": 4,
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "label",
+                    "current",
+                    "prior"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "enum": [
+                  "line",
+                  "timeseries",
+                  "dual_line",
+                  "trend"
+                ]
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "series"
+            ],
+            "properties": {
+              "series": {
+                "type": "array",
+                "minItems": 1,
+                "maxItems": 4,
+                "items": {
+                  "$ref": "#/$defs/series"
+                }
+              },
+              "annotations": {
+                "type": "array",
+                "maxItems": 2,
+                "items": {
+                  "$ref": "#/$defs/annotation"
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "enum": [
+                  "area",
+                  "spark",
+                  "annotated"
+                ]
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "values"
+            ],
+            "properties": {
+              "values": {
+                "$ref": "#/$defs/numbers"
+              },
+              "callouts": {
+                "type": "array",
+                "maxItems": 2,
+                "items": {
+                  "$ref": "#/$defs/annotation"
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "enum": [
+                  "bars",
+                  "bar",
+                  "stacked",
+                  "category"
+                ]
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "categories",
+              "series"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "enum": [
+                  "brief",
+                  "bullets",
+                  "watch",
+                  "list"
+                ]
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "points"
+            ],
+            "properties": {
+              "points": {
+                "type": "array",
+                "minItems": 1,
+                "maxItems": 4
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "enum": [
+                  "alert",
+                  "incident",
+                  "status"
+                ]
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "title"
+            ],
+            "properties": {
+              "severity": {
+                "enum": [
+                  "sev1",
+                  "sev2",
+                  "sev3",
+                  "info",
+                  "resolved",
+                  "blocked",
+                  "alert",
+                  "watch"
+                ]
+              },
+              "timeline": {
+                "type": "array",
+                "maxItems": 5
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "enum": [
+                  "gap",
+                  "before_after",
+                  "target_gap"
+                ]
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "value"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "enum": [
+                  "allocation",
+                  "composition",
+                  "donut",
+                  "share"
+                ]
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "items"
+            ],
+            "properties": {
+              "style": {
+                "enum": [
+                  "bar",
+                  "donut"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "enum": [
+                  "timeline",
+                  "agenda",
+                  "upcoming",
+                  "cadence"
+                ]
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "events"
+            ],
+            "properties": {
+              "events": {
+                "type": "array",
+                "maxItems": 6,
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "date",
+                    "text"
+                  ],
+                  "properties": {
+                    "state": {
+                      "enum": [
+                        "past",
+                        "done",
+                        "today",
+                        "now",
+                        "next",
+                        "later"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "enum": [
+                  "holdings",
+                  "portfolio",
+                  "positions"
+                ]
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "rows"
+            ],
+            "properties": {
+              "rows": {
+                "type": "array",
+                "maxItems": 7
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "enum": [
+                  "roster",
+                  "balance_sheet",
+                  "accounts"
+                ]
+              }
+            }
+          },
+          "then": {
+            "anyOf": [
+              {
+                "required": [
+                  "groups"
+                ]
+              },
+              {
+                "required": [
+                  "items"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "enum": [
+                  "spend",
+                  "merchants",
+                  "spend_digest"
+                ]
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "value",
+              "merchants"
+            ],
+            "properties": {
+              "merchants": {
+                "type": "array",
+                "maxItems": 6
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "enum": [
+                  "breakeven",
+                  "break_even",
+                  "asset_vs_cost"
+                ]
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "price"
+            ],
+            "properties": {
+              "steps": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "at",
+                    "value"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "enum": [
+                  "vitals",
+                  "health",
+                  "sleep"
+                ]
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "value"
+            ],
+            "properties": {
+              "score": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 100
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "enum": [
+                  "radar",
+                  "news",
+                  "headlines"
+                ]
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "items"
+            ],
+            "properties": {
+              "items": {
+                "type": "array",
+                "minItems": 1,
+                "maxItems": 4,
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "headline"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "enum": [
+                  "experiment",
+                  "ab",
+                  "ab_test"
+                ]
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "variants"
+            ],
+            "properties": {
+              "variants": {
+                "type": "array",
+                "minItems": 2,
+                "maxItems": 4
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "enum": [
+                  "progress",
+                  "north_star",
+                  "goal"
+                ]
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "current",
+              "goal"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "enum": [
+                  "cover",
+                  "digest",
+                  "series_cover"
+                ]
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "items"
+            ],
+            "properties": {
+              "items": {
+                "type": "array",
+                "minItems": 2,
+                "maxItems": 4
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "enum": [
+                  "decision",
+                  "ask",
+                  "approval"
+                ]
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "options"
+            ],
+            "properties": {
+              "options": {
+                "type": "array",
+                "minItems": 2,
+                "maxItems": 4,
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "key",
+                    "label"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "enum": [
+                  "heatmap",
+                  "calendar",
+                  "cadence_grid"
+                ]
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "weeks"
+            ],
+            "properties": {
+              "weeks": {
+                "type": "array",
+                "items": {
+                  "type": "array",
+                  "maxItems": 7
+                }
+              },
+              "invert": {
+                "type": "boolean",
+                "description": "Low values are better: bright = low."
+              },
+              "legend": {
+                "type": "array",
+                "minItems": 2,
+                "maxItems": 2,
+                "items": {
+                  "type": "string"
+                },
+                "description": "[dim label, bright label], default [\"less\", \"more\"]."
+              },
+              "best": {
+                "type": "array",
+                "minItems": 2,
+                "maxItems": 2,
+                "items": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "enum": [
+                  "funnel",
+                  "conversion"
+                ]
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "stages"
+            ],
+            "properties": {
+              "stages": {
+                "type": "array",
+                "minItems": 2,
+                "maxItems": 6
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "enum": [
+                  "multi_institution_nw",
+                  "nw_buckets",
+                  "networth_buckets",
+                  "institution_nw"
+                ]
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "rows"
+            ],
+            "properties": {
+              "rows": {
+                "type": "array",
+                "minItems": 1,
+                "maxItems": 11,
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "label"
+                  ],
+                  "properties": {
+                    "label": {
+                      "type": "string"
+                    },
+                    "sub": {
+                      "type": "string",
+                      "description": "Institution or basis, e.g. \"Wealthsimple cash + crypto\"."
+                    },
+                    "value": {
+                      "type": "string"
+                    },
+                    "num": {
+                      "type": "number",
+                      "description": "Aaron's share; negative for liabilities."
+                    },
+                    "share": {
+                      "type": [
+                        "number",
+                        "string"
+                      ],
+                      "description": "Ownership shown in its own column, e.g. \"45% share\"."
+                    },
+                    "included": {
+                      "type": "boolean",
+                      "default": true,
+                      "description": "false = modeled but left out of the total."
+                    },
+                    "exclude": {
+                      "type": "boolean",
+                      "description": "Alias for included: false."
+                    }
+                  }
+                }
+              },
+              "total": {
+                "type": "object",
+                "properties": {
+                  "label": {
+                    "type": "string"
+                  },
+                  "value": {
+                    "type": "string",
+                    "description": "Defaults to fmt(sum of included rows)."
+                  },
+                  "num": {
+                    "type": "number",
+                    "description": "Checked against the included rows."
+                  },
+                  "sub": {
+                    "type": "string"
+                  },
+                  "right": {
+                    "type": "string"
+                  }
+                }
+              },
+              "excluded_label": {
+                "type": "string",
+                "default": "Not in total"
+              },
+              "excluded_right": {
+                "type": "string"
+              },
+              "all_in": {
+                "description": "Whisper under the excluded rows. false hides it; default is auto-summed.",
+                "oneOf": [
+                  {
+                    "type": "boolean"
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "label": {
+                        "type": "string"
+                      },
+                      "value": {
+                        "type": "string"
+                      },
+                      "num": {
+                        "type": "number"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "enum": [
+                  "cashflow_sankey",
+                  "sankey",
+                  "cashflow",
+                  "flow"
+                ]
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "nodes",
+              "links"
+            ],
+            "properties": {
+              "nodes": {
+                "type": "array",
+                "minItems": 2,
+                "maxItems": 24,
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "id",
+                    "label"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": [
+                        "string",
+                        "integer"
+                      ]
+                    },
+                    "label": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "string",
+                      "description": "Pre-formatted label value."
+                    },
+                    "column": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "description": "Override the inferred column."
+                    },
+                    "tone": {
+                      "enum": [
+                        "good",
+                        "ink",
+                        "muted"
+                      ],
+                      "description": "good = olive (saved, invested)."
+                    }
+                  }
+                }
+              },
+              "links": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "source",
+                    "target",
+                    "num"
+                  ],
+                  "properties": {
+                    "source": {
+                      "type": [
+                        "string",
+                        "integer"
+                      ]
+                    },
+                    "target": {
+                      "type": [
+                        "string",
+                        "integer"
+                      ]
+                    },
+                    "num": {
+                      "type": "number",
+                      "exclusiveMinimum": 0
+                    },
+                    "tone": {
+                      "enum": [
+                        "good",
+                        "ink",
+                        "muted"
+                      ]
+                    }
+                  }
+                }
+              },
+              "stages": {
+                "type": "array",
+                "maxItems": 5,
+                "items": {
+                  "type": "string"
+                },
+                "description": "Eyebrow per column, e.g. [\"Income\", \"Where it went\", \"Landed in\"]."
+              },
+              "value": {
+                "type": "string"
+              },
+              "aside": {
+                "type": "object",
+                "properties": {
+                  "label": {
+                    "type": "string"
+                  },
+                  "value": {
+                    "type": "string"
+                  },
+                  "tone": {
+                    "enum": [
+                      "ink",
+                      "muted"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "enum": [
+                  "nw_delta_weekly",
+                  "nw_delta",
+                  "networth_delta",
+                  "nw_weekly"
+                ]
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "value",
+              "delta"
+            ],
+            "properties": {
+              "value": {
+                "type": "string"
+              },
+              "num": {
+                "type": "number",
+                "description": "Current net worth; with prior.num, checked against drivers."
+              },
+              "polarity": {
+                "enum": [
+                  "up_good",
+                  "down_good",
+                  "neutral"
+                ],
+                "default": "up_good"
+              },
+              "prior": {
+                "type": "object",
+                "properties": {
+                  "label": {
+                    "type": "string"
+                  },
+                  "value": {
+                    "type": "string"
+                  },
+                  "num": {
+                    "type": "number"
+                  }
+                }
+              },
+              "spark": {
+                "oneOf": [
+                  {
+                    "$ref": "#/$defs/numbers"
+                  },
+                  {
+                    "type": "object",
+                    "required": [
+                      "values"
+                    ],
+                    "properties": {
+                      "values": {
+                        "$ref": "#/$defs/numbers"
+                      },
+                      "x": {
+                        "type": "array"
+                      },
+                      "prior_at": {
+                        "type": [
+                          "integer",
+                          "null"
+                        ]
+                      },
+                      "label": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                ]
+              },
+              "drivers": {
+                "type": "array",
+                "maxItems": 4,
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "label",
+                    "num"
+                  ],
+                  "properties": {
+                    "label": {
+                      "type": "string"
+                    },
+                    "sub": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "string"
+                    },
+                    "num": {
+                      "type": "number"
+                    }
+                  }
+                }
+              },
+              "composition": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "label",
+                    "num"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "enum": [
+                  "manulife_notes_strip",
+                  "notes_strip",
+                  "structured_notes",
+                  "manulife_notes"
+                ]
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "notes"
+            ],
+            "properties": {
+              "notes": {
+                "type": "array",
+                "minItems": 3,
+                "maxItems": 3,
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "name",
+                    "principal"
+                  ],
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "sub": {
+                      "type": "string"
+                    },
+                    "principal": {
+                      "$ref": "#/$defs/money"
+                    },
+                    "accrued": {
+                      "$ref": "#/$defs/money"
+                    },
+                    "mtm": {
+                      "oneOf": [
+                        {
+                          "$ref": "#/$defs/money"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "description": "null = not known yet (partial OK)."
+                    },
+                    "mtm_note": {
+                      "type": "string",
+                      "default": "MTM pending"
+                    },
+                    "maturity": {
+                      "type": "string"
+                    },
+                    "delta": {
+                      "$ref": "#/$defs/delta"
+                    }
+                  }
+                }
+              },
+              "value_label": {
+                "type": "string"
+              },
+              "value": {
+                "type": "string",
+                "description": "Defaults to MTM where known, else principal + accrued."
+              },
+              "note": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "enum": [
+                  "home_equity_card",
+                  "home_equity",
+                  "property_equity"
+                ]
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "property",
+              "equity_pct",
+              "mortgage"
+            ],
+            "properties": {
+              "property": {
+                "$ref": "#/$defs/money"
+              },
+              "equity_pct": {
+                "type": [
+                  "number",
+                  "string"
+                ],
+                "description": "Ownership: 45, 0.45 or \"45%\" (e.g. Westway % from Coda)."
+              },
+              "equity_label": {
+                "type": "string"
+              },
+              "equity_source": {
+                "type": "string"
+              },
+              "mortgage": {
+                "$ref": "#/$defs/money"
+              },
+              "joint_cash": {
+                "$ref": "#/$defs/money"
+              },
+              "value": {
+                "type": "string",
+                "description": "Defaults to property × % − mortgage share + joint cash share."
+              },
+              "num": {
+                "type": "number",
+                "description": "Checked against the computed equity."
+              },
+              "status": {
+                "type": "string"
+              },
+              "value_label": {
+                "type": "string"
+              },
+              "result_label": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "money": {
+      "description": "A money figure: pre-formatted string, raw number, or {value, num}. Ownership share, net of debt.",
+      "oneOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "number"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "value": {
+              "type": "string",
+              "description": "Pre-formatted, e.g. \"C$25,840\"."
+            },
+            "num": {
+              "type": "number"
+            },
+            "label": {
+              "type": "string"
+            },
+            "sub": {
+              "type": "string"
+            },
+            "share": {
+              "type": [
+                "number",
+                "string"
+              ],
+              "description": "Ownership share: 45, 0.45 or \"45%\"."
+            }
+          }
+        }
+      ]
+    }
+  }
+}

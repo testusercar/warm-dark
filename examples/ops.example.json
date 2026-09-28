@@ -1,0 +1,302 @@
+{
+  "version": 2,
+  "agent": "Scout",
+  "domain": "Ops",
+  "date": "Sep 27",
+  "footer": "fleet brief",
+  "outdir": "out/ops",
+  "cards": [
+    {
+      "type": "alert",
+      "slug": "sweep-blocked",
+      "severity": "sev1",
+      "status": "Blocked",
+      "since": "since 06:12 · 7h 32m",
+      "title": "Nightly sweep failing",
+      "body": "10 of 10 listing sweeps failed at sign-in.",
+      "detail": "eBay identity token expired; the refresh needs your 2FA approval.",
+      "impact": [
+        {
+          "label": "Runs failed",
+          "value": "10/10"
+        },
+        {
+          "label": "Listings stale",
+          "value": "46"
+        },
+        {
+          "label": "Last good",
+          "value": "23:40",
+          "sub": "Sep 26"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "23:40",
+          "text": "Last clean sweep",
+          "state": "ok"
+        },
+        {
+          "time": "06:12",
+          "text": "First sign-in failure",
+          "state": "done"
+        },
+        {
+          "time": "06:40",
+          "text": "Retries exhausted; paused to avoid lockout",
+          "state": "done"
+        },
+        {
+          "time": "13:44",
+          "text": "Waiting on your 2FA approval",
+          "state": "now"
+        },
+        {
+          "time": "next",
+          "text": "Resume sweep and backfill 46 listings",
+          "state": "next"
+        }
+      ],
+      "next": {
+        "label": "Needs you",
+        "owner": "Scout",
+        "text": "Approve the eBay prompt on your phone — Scout resumes within 5 min."
+      }
+    },
+    {
+      "type": "alert",
+      "slug": "sync-resolved",
+      "agent": "Ledger",
+      "domain": "Finance",
+      "footer": "Finance-xai · Wealthsimple · read-only",
+      "severity": "resolved",
+      "since": "down 2h 10m · fixed 13:30",
+      "title": "Syncing again",
+      "body": "Wealthsimple is back; all six accounts are current.",
+      "detail": "Cause: a scheduled Wealthsimple maintenance window.",
+      "impact": [
+        {
+          "label": "Downtime",
+          "value": "2h 10m"
+        },
+        {
+          "label": "Accounts",
+          "value": "6/6",
+          "sub": "current",
+          "tone": "positive"
+        },
+        {
+          "label": "Data lost",
+          "value": "None"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "11:20",
+          "text": "Sync started failing",
+          "state": "done"
+        },
+        {
+          "time": "11:25",
+          "text": "Switched cards to last-known balances",
+          "state": "done"
+        },
+        {
+          "time": "13:30",
+          "text": "Connection restored, backfilled",
+          "state": "ok"
+        }
+      ],
+      "next": {
+        "label": "Nothing needed",
+        "text": "Sunday digest goes out on schedule at 6 pm."
+      }
+    },
+    {
+      "type": "timeline",
+      "slug": "week-ahead",
+      "agent": "Jeeves",
+      "domain": "Home",
+      "footer": "Calendar · household",
+      "title": "Week ahead",
+      "dek": "Five things with a time on them",
+      "events": [
+        {
+          "date": "Sep 26",
+          "dow": "Sat",
+          "text": "Furnace filter swapped",
+          "meta": "done · next due Dec",
+          "state": "past"
+        },
+        {
+          "date": "Sep 27",
+          "dow": "Sun",
+          "text": "Call Mom",
+          "meta": "7:00 pm",
+          "state": "today",
+          "tag": "today"
+        },
+        {
+          "date": "Sep 29",
+          "dow": "Tue",
+          "text": "Dentist — Dr. Park",
+          "meta": "2:15 pm · 40 min",
+          "state": "next"
+        },
+        {
+          "date": "Oct 1",
+          "dow": "Thu",
+          "text": "Quarterly tax instalment",
+          "meta": "CRA · C$2,100 · auto-pay set",
+          "state": "later"
+        },
+        {
+          "date": "Oct 3",
+          "dow": "Sat",
+          "text": "Card statement due",
+          "meta": "Wealthsimple · C$2,733",
+          "state": "later"
+        }
+      ],
+      "note": "Tuesday is the only day with a hard stop — keep 1:30–3:30 clear."
+    },
+    {
+      "type": "decision",
+      "slug": "globe-renewal",
+      "agent": "Jeeves",
+      "domain": "Subscriptions",
+      "footer": "Jeeves · reply in chat",
+      "title": "Renew the Globe?",
+      "dek": "Auto-renews Oct 2 at C$34.99/mo — up from C$19.99.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Cancel",
+          "detail": "Read via the library's PressReader instead.",
+          "recommended": true
+        },
+        {
+          "key": "B",
+          "label": "Drop to digital basic",
+          "detail": "C$19.99/mo · loses Report on Business."
+        },
+        {
+          "key": "C",
+          "label": "Renew as is",
+          "detail": "C$420 a year."
+        }
+      ],
+      "why": "You opened it 3 times in September; Radar already covers ROB headlines.",
+      "deadline": "Reply by Oct 1, 6 pm",
+      "default": "no reply = A"
+    },
+    {
+      "type": "experiment",
+      "slug": "onboarding-ab",
+      "agent": "Max",
+      "domain": "Growth",
+      "footer": "Maxxit · product analytics",
+      "title": "Onboarding test",
+      "dek": "Trial → paid within 14 days",
+      "verdict": "Ship B",
+      "lift": {
+        "value": "+18%",
+        "note": "relative lift in conversion"
+      },
+      "confidence": "**96%** chance B beats A · 2,410 trials",
+      "winner": "B",
+      "fmt": "{:.1f}%",
+      "variants": [
+        {
+          "key": "A",
+          "name": "A",
+          "label": "Current flow",
+          "rate": 11.2,
+          "ci": [
+            9.5,
+            12.9
+          ],
+          "n": 1204,
+          "control": true
+        },
+        {
+          "key": "B",
+          "name": "B",
+          "label": "Guided setup",
+          "rate": 13.2,
+          "ci": [
+            11.4,
+            15.1
+          ],
+          "n": 1206
+        }
+      ],
+      "facts": [
+        {
+          "label": "Window",
+          "value": "Sep 6–26"
+        },
+        {
+          "label": "Rule",
+          "value": "≥95%, 2 wks"
+        },
+        {
+          "label": "Est. impact",
+          "value": "+38",
+          "sub": "paid teams / month"
+        }
+      ]
+    },
+    {
+      "type": "empty",
+      "slug": "no-scans",
+      "domain": "Ship",
+      "footer": "FedEx tracking · auto-refresh 30 min",
+      "title": "Carrier scans",
+      "dek": "Palantir #12592 · FedEx 877779458572",
+      "message": "No scans yet",
+      "skeleton": "list",
+      "reason": "Label created Sep 26; FedEx hasn't picked it up.",
+      "expected": "First scan usually lands by 9 pm on drop-off day. Scout checks again at 6 pm and pings you only if it's still silent.",
+      "facts": [
+        {
+          "label": "Label",
+          "value": "Sep 26"
+        },
+        {
+          "label": "Next check",
+          "value": "6 pm"
+        },
+        {
+          "label": "Promised",
+          "value": "Oct 1"
+        }
+      ]
+    },
+    {
+      "type": "hero",
+      "slug": "shipped-photo",
+      "domain": "Ship",
+      "footer": "FedEx · tracking link in chat",
+      "title": "Shipped",
+      "body": "Palantir #12592 · FedEx 877779458572",
+      "image": "../refs/sample-tracking.png",
+      "facts": [
+        {
+          "label": "Picked up",
+          "value": "Sep 26",
+          "sub": "4:12 pm · Mississauga"
+        },
+        {
+          "label": "Arrives",
+          "value": "Oct 1"
+        },
+        {
+          "label": "Seller net",
+          "value": "C$126",
+          "sub": "after fees + label"
+        }
+      ]
+    }
+  ]
+}

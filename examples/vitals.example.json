@@ -1,0 +1,355 @@
+{
+  "version": 2,
+  "agent": "Vitals",
+  "domain": "Health",
+  "date": "Sep 27",
+  "footer": "Withings · last sync 07:31",
+  "outdir": "out/vitals",
+  "cards": [
+    {
+      "type": "vitals",
+      "slug": "sleep",
+      "title": "Sleep",
+      "dek": "Saturday night",
+      "value": "7h 12m",
+      "delta": {
+        "value": "+24m",
+        "note": "vs 7-night average"
+      },
+      "context": "In bed 11:48 pm → 7:21 am · 7h 12m asleep, 20m awake",
+      "score": 84,
+      "score_label": "score",
+      "stages": [
+        {
+          "label": "Deep",
+          "minutes": 88
+        },
+        {
+          "label": "REM",
+          "minutes": 106
+        },
+        {
+          "label": "Light",
+          "minutes": 238
+        },
+        {
+          "label": "Awake",
+          "minutes": 20
+        }
+      ],
+      "history": {
+        "label": "Last 7 nights · hours asleep",
+        "values": [
+          6.4,
+          6.9,
+          7.5,
+          6.1,
+          6.8,
+          7.9,
+          7.2
+        ],
+        "labels": [
+          "Sun",
+          "Mon",
+          "Tue",
+          "Wed",
+          "Thu",
+          "Fri",
+          "Sat"
+        ],
+        "goal": 8,
+        "goal_label": "8h goal"
+      },
+      "facts": [
+        {
+          "label": "HRV",
+          "value": "58 ms",
+          "delta": "+4"
+        },
+        {
+          "label": "Resting HR",
+          "value": "52 bpm",
+          "delta": {
+            "value": "−1",
+            "polarity": "down_good"
+          }
+        },
+        {
+          "label": "Breathing",
+          "value": "14.1",
+          "sub": "per minute"
+        }
+      ]
+    },
+    {
+      "type": "area",
+      "slug": "hrv-30",
+      "title": "HRV, 30 nights",
+      "dek": "Overnight average · higher is better",
+      "value": "58 ms",
+      "delta": {
+        "value": "+9%",
+        "note": "vs August average"
+      },
+      "values": [
+        52,
+        54,
+        51,
+        53,
+        55,
+        50,
+        44,
+        41,
+        46,
+        50,
+        52,
+        53,
+        55,
+        54,
+        56,
+        57,
+        55,
+        58,
+        60,
+        59,
+        57,
+        58,
+        61,
+        62,
+        60,
+        58,
+        57,
+        59,
+        60,
+        58
+      ],
+      "x": [
+        "Aug 29",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Sep 27"
+      ],
+      "callouts": [
+        {
+          "at": 7,
+          "text": "Red-eye to Toronto",
+          "sub": "41 ms low"
+        },
+        {
+          "at": 23,
+          "text": "Deload week",
+          "sub": "62 ms high",
+          "positive": true
+        }
+      ],
+      "refs": [
+        {
+          "value": 53,
+          "label": "Aug avg 53 ms"
+        }
+      ],
+      "facts": [
+        {
+          "label": "7-night avg",
+          "value": "59 ms"
+        },
+        {
+          "label": "Range",
+          "value": "41–62"
+        },
+        {
+          "label": "Trend",
+          "value": "Rising",
+          "tone": "positive"
+        }
+      ]
+    },
+    {
+      "type": "heatmap",
+      "slug": "bedtime-consistency",
+      "title": "Bedtime drift",
+      "dek": "Minutes away from your 11:30 pm target, last 13 weeks",
+      "value": "±21 min",
+      "delta": {
+        "value": "−9 min",
+        "polarity": "down_good",
+        "note": "tighter than summer"
+      },
+      "weeks": [
+        [
+          40,
+          35,
+          30,
+          55,
+          70,
+          90,
+          60
+        ],
+        [
+          35,
+          25,
+          40,
+          45,
+          65,
+          85,
+          50
+        ],
+        [
+          30,
+          30,
+          25,
+          40,
+          60,
+          80,
+          45
+        ],
+        [
+          25,
+          20,
+          30,
+          35,
+          55,
+          75,
+          40
+        ],
+        [
+          30,
+          25,
+          20,
+          30,
+          50,
+          70,
+          45
+        ],
+        [
+          20,
+          15,
+          20,
+          25,
+          45,
+          65,
+          35
+        ],
+        [
+          15,
+          10,
+          15,
+          20,
+          40,
+          60,
+          30
+        ],
+        [
+          20,
+          15,
+          10,
+          15,
+          35,
+          55,
+          25
+        ],
+        [
+          15,
+          10,
+          10,
+          15,
+          30,
+          50,
+          25
+        ],
+        [
+          10,
+          5,
+          10,
+          10,
+          25,
+          45,
+          20
+        ],
+        [
+          10,
+          10,
+          5,
+          10,
+          25,
+          40,
+          20
+        ],
+        [
+          5,
+          10,
+          5,
+          5,
+          20,
+          35,
+          15
+        ],
+        [
+          5,
+          5,
+          10,
+          5,
+          20,
+          30,
+          null
+        ]
+      ],
+      "month_labels": {
+        "0": "Jun 29",
+        "5": "Aug 3",
+        "9": "Aug 31"
+      },
+      "best": [
+        12,
+        0
+      ],
+      "best_label": "on target · 5 min off",
+      "facts": [
+        {
+          "label": "Weeknights",
+          "value": "±12 min",
+          "tone": "positive"
+        },
+        {
+          "label": "Fri–Sat",
+          "value": "±38 min"
+        },
+        {
+          "label": "Worst",
+          "value": "Sat, Jul 4"
+        }
+      ],
+      "invert": true,
+      "legend": [
+        "off target",
+        "on target"
+      ]
+    }
+  ]
+}

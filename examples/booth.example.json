@@ -1,0 +1,1025 @@
+{
+  "version": 2,
+  "agent": "Booth",
+  "domain": "TPT store",
+  "date": "Sep 27",
+  "footer": "TPT seller dashboard · seller net after fees",
+  "outdir": "out/booth",
+  "cards": [
+    {
+      "type": "kpi",
+      "slug": "net-earnings",
+      "title": "Net earnings",
+      "dek": "September to date, after TPT fees",
+      "value": "US$1,284",
+      "delta": {
+        "value": "+28%",
+        "note": "vs August, same day"
+      },
+      "context": "212 orders · **US$6.06** net per order",
+      "spark": {
+        "label": "Cumulative net · August in grey",
+        "values": [
+          38,
+          91,
+          176,
+          240,
+          281,
+          322,
+          371,
+          409,
+          452,
+          497,
+          540,
+          571,
+          603,
+          648,
+          699,
+          741,
+          786,
+          820,
+          861,
+          903,
+          948,
+          1002,
+          1049,
+          1101,
+          1160,
+          1221,
+          1284
+        ],
+        "prior": [
+          31,
+          70,
+          128,
+          180,
+          214,
+          251,
+          290,
+          322,
+          360,
+          399,
+          431,
+          460,
+          490,
+          529,
+          570,
+          603,
+          640,
+          668,
+          700,
+          739,
+          772,
+          810,
+          851,
+          890,
+          930,
+          967,
+          1004
+        ],
+        "x": [
+          "Sep 1",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "Sep 27"
+        ],
+        "positive": true
+      },
+      "facts": [
+        {
+          "label": "Orders",
+          "value": "212",
+          "delta": "+24"
+        },
+        {
+          "label": "Best seller",
+          "value": "Fractions",
+          "sub": "US$214 net"
+        },
+        {
+          "label": "Payout",
+          "value": "Oct 15",
+          "sub": "est. US$1,410"
+        }
+      ]
+    },
+    {
+      "type": "scoreboard",
+      "slug": "week-vs-last",
+      "title": "This week",
+      "dek": "Sep 21–27 against Sep 14–20",
+      "current": {
+        "label": "This week",
+        "value": "US$342"
+      },
+      "prior": {
+        "label": "Last week",
+        "value": "US$296"
+      },
+      "delta": {
+        "value": "+15.5%",
+        "note": "net earnings"
+      },
+      "rows": [
+        {
+          "label": "Orders",
+          "current": 58,
+          "prior": 49
+        },
+        {
+          "label": "Product views",
+          "current": 4120,
+          "prior": 4480
+        },
+        {
+          "label": "Conversion",
+          "current": 1.41,
+          "prior": 1.09,
+          "fmt": "{:.2f}%"
+        },
+        {
+          "label": "Net per order",
+          "current": 5.9,
+          "prior": 6.04,
+          "fmt": "US${:.2f}"
+        }
+      ]
+    },
+    {
+      "type": "line",
+      "slug": "net-vs-august",
+      "title": "Pacing August",
+      "dek": "Cumulative seller net by day of month",
+      "value": "+US$280",
+      "delta": {
+        "value": "+28%",
+        "note": "ahead of August on day 27"
+      },
+      "series": [
+        {
+          "role": "prior",
+          "name": "August, full month",
+          "label": "US$1,140",
+          "values": [
+            31,
+            70,
+            128,
+            180,
+            214,
+            251,
+            290,
+            322,
+            360,
+            399,
+            431,
+            460,
+            490,
+            529,
+            570,
+            603,
+            640,
+            668,
+            700,
+            739,
+            772,
+            810,
+            851,
+            890,
+            930,
+            967,
+            1004,
+            1052,
+            1101,
+            1140
+          ]
+        },
+        {
+          "role": "current",
+          "name": "September",
+          "label": "US$1,284",
+          "values": [
+            38,
+            91,
+            176,
+            240,
+            281,
+            322,
+            371,
+            409,
+            452,
+            497,
+            540,
+            571,
+            603,
+            648,
+            699,
+            741,
+            786,
+            820,
+            861,
+            903,
+            948,
+            1002,
+            1049,
+            1101,
+            1160,
+            1221,
+            1284,
+            null,
+            null,
+            null
+          ]
+        }
+      ],
+      "x": [
+        "Day 1",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Day 10",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Day 20",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Day 30"
+      ],
+      "x_ticks": [
+        0,
+        9,
+        19,
+        29
+      ],
+      "fmt": "US${:,.0f}",
+      "axis_fmt": "{:k}",
+      "zero": true,
+      "annotations": [
+        {
+          "at": 2,
+          "text": "Back-to-school bundle",
+          "sub": "US$85 in a day"
+        }
+      ]
+    },
+    {
+      "type": "line",
+      "slug": "daily-net-landscape",
+      "format": "landscape",
+      "title": "Daily net, 12 weeks",
+      "dek": "7-day average against the same weeks last year",
+      "series": [
+        {
+          "role": "prior",
+          "name": "2025",
+          "label": "US$29",
+          "values": [
+            22,
+            23,
+            21,
+            22,
+            24,
+            25,
+            24,
+            26,
+            28,
+            31,
+            33,
+            35,
+            36,
+            34,
+            33,
+            31,
+            30,
+            31,
+            29,
+            28,
+            29,
+            30,
+            29,
+            29
+          ]
+        },
+        {
+          "role": "current",
+          "name": "2026",
+          "label": "US$47",
+          "values": [
+            26,
+            27,
+            26,
+            28,
+            29,
+            31,
+            30,
+            33,
+            37,
+            42,
+            46,
+            51,
+            55,
+            52,
+            49,
+            46,
+            44,
+            45,
+            43,
+            44,
+            45,
+            46,
+            46,
+            47
+          ]
+        }
+      ],
+      "x": [
+        "Jul 6",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Aug 3",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Aug 31",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Sep 27"
+      ],
+      "x_ticks": [
+        0,
+        8,
+        16,
+        23
+      ],
+      "fmt": "US${:,.0f}",
+      "axis_fmt": "{:,.0f}",
+      "annotations": [
+        {
+          "at": 12,
+          "text": "Back-to-school peak",
+          "sub": "US$55/day"
+        }
+      ],
+      "facts": [
+        {
+          "label": "12-week net",
+          "value": "US$3,410"
+        },
+        {
+          "label": "vs 2025",
+          "value": "+US$1,150",
+          "delta": "+51%"
+        },
+        {
+          "label": "Best week",
+          "value": "Aug 17–23"
+        }
+      ]
+    },
+    {
+      "type": "bars",
+      "slug": "net-by-line",
+      "title": "Net by product line",
+      "dek": "September to date · seller net",
+      "categories": [
+        "Bundles",
+        "Math",
+        "ELA",
+        "Science",
+        "Clip art",
+        "Posters"
+      ],
+      "series": [
+        {
+          "name": "Net",
+          "values": [
+            412,
+            336,
+            248,
+            142,
+            96,
+            50
+          ]
+        }
+      ],
+      "highlight": "Bundles",
+      "fmt": "US${:,.0f}",
+      "facts": [
+        {
+          "label": "Bundles share",
+          "value": "32%",
+          "delta": {
+            "value": "+8 pts",
+            "note": "vs August"
+          }
+        },
+        {
+          "label": "New listings",
+          "value": "9",
+          "sub": "3 in Bundles"
+        }
+      ]
+    },
+    {
+      "type": "bars",
+      "slug": "channel-weeks-landscape",
+      "format": "landscape",
+      "title": "Net by channel",
+      "dek": "Last 6 weeks · seller net, USD",
+      "stacked": true,
+      "categories": [
+        "W34",
+        "W35",
+        "W36",
+        "W37",
+        "W38",
+        "W39"
+      ],
+      "series": [
+        {
+          "name": "TPT",
+          "values": [
+            244,
+            268,
+            301,
+            262,
+            250,
+            281
+          ]
+        },
+        {
+          "name": "eBay booth",
+          "values": [
+            38,
+            52,
+            44,
+            61,
+            36,
+            49
+          ]
+        },
+        {
+          "name": "Direct",
+          "values": [
+            8,
+            12,
+            6,
+            14,
+            10,
+            12
+          ]
+        }
+      ],
+      "highlight": 5,
+      "fmt": "US${:,.0f}"
+    },
+    {
+      "type": "funnel",
+      "slug": "listing-funnel",
+      "title": "Store funnel",
+      "dek": "September to date, all listings",
+      "value": "1.15%",
+      "delta": {
+        "value": "+0.21 pts",
+        "note": "view → purchase vs Aug"
+      },
+      "stages": [
+        {
+          "label": "Product views",
+          "num": 18420,
+          "value": "18,420"
+        },
+        {
+          "label": "Previews opened",
+          "num": 3105,
+          "value": "3,105"
+        },
+        {
+          "label": "Wishlisted",
+          "num": 612,
+          "value": "612"
+        },
+        {
+          "label": "Purchased",
+          "num": 212,
+          "value": "212"
+        }
+      ],
+      "weakest_label": "biggest drop"
+    },
+    {
+      "type": "gap",
+      "slug": "price-cut",
+      "agent": "Booth",
+      "domain": "eBay booth",
+      "footer": "eBay Seller Hub · comps from sold listings",
+      "title": "OD1 price cut",
+      "dek": "New in box · listed 19 days · 3 watchers",
+      "value": "−C$7",
+      "delta": {
+        "value": "−4.5%",
+        "polarity": "neutral",
+        "note": "ask moves toward comps"
+      },
+      "before": {
+        "label": "Was",
+        "value": "C$155",
+        "num": 155
+      },
+      "after": {
+        "label": "Now",
+        "value": "C$148",
+        "num": 148
+      },
+      "target": {
+        "label": "Comps median",
+        "value": "C$145",
+        "num": 145
+      },
+      "polarity": "down_good",
+      "facts": [
+        {
+          "label": "Net if sold",
+          "value": "C$126",
+          "sub": "after fees + ship"
+        },
+        {
+          "label": "Views, 7d",
+          "value": "41",
+          "delta": {
+            "value": "−12",
+            "note": "wk/wk"
+          }
+        },
+        {
+          "label": "Offers",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "type": "gap",
+      "slug": "goal-gap",
+      "title": "September goal",
+      "dek": "Seller net against the US$1,500 month target",
+      "value": "US$216",
+      "context": "to go with 3 days left · needs **US$72/day** (running US$48/day)",
+      "before": {
+        "label": "August",
+        "value": "US$1,140",
+        "num": 1140
+      },
+      "after": {
+        "label": "Sep so far",
+        "value": "US$1,284",
+        "num": 1284
+      },
+      "target": {
+        "label": "Goal",
+        "value": "US$1,500",
+        "num": 1500
+      },
+      "gap_label": "US$216 to go",
+      "polarity": "up_good"
+    },
+    {
+      "type": "heatmap",
+      "slug": "sales-days",
+      "title": "Sales days",
+      "dek": "Orders per day, last 13 weeks",
+      "value": "7.9",
+      "delta": {
+        "value": "+2.3",
+        "note": "orders/day vs June–July"
+      },
+      "weeks": [
+        [
+          3,
+          4,
+          2,
+          5,
+          4,
+          1,
+          2
+        ],
+        [
+          4,
+          3,
+          5,
+          4,
+          3,
+          2,
+          1
+        ],
+        [
+          5,
+          4,
+          4,
+          6,
+          5,
+          2,
+          2
+        ],
+        [
+          4,
+          6,
+          5,
+          5,
+          4,
+          1,
+          3
+        ],
+        [
+          6,
+          7,
+          6,
+          8,
+          6,
+          3,
+          2
+        ],
+        [
+          8,
+          9,
+          11,
+          10,
+          7,
+          4,
+          3
+        ],
+        [
+          12,
+          14,
+          13,
+          11,
+          9,
+          5,
+          4
+        ],
+        [
+          11,
+          12,
+          10,
+          9,
+          8,
+          4,
+          3
+        ],
+        [
+          9,
+          10,
+          9,
+          8,
+          7,
+          3,
+          3
+        ],
+        [
+          10,
+          11,
+          9,
+          10,
+          8,
+          4,
+          2
+        ],
+        [
+          9,
+          10,
+          11,
+          9,
+          7,
+          3,
+          3
+        ],
+        [
+          10,
+          9,
+          10,
+          11,
+          8,
+          4,
+          4
+        ],
+        [
+          11,
+          10,
+          12,
+          10,
+          9,
+          5,
+          4
+        ]
+      ],
+      "month_labels": {
+        "0": "Jun 29",
+        "5": "Aug 3",
+        "9": "Aug 31"
+      },
+      "best": [
+        6,
+        1
+      ],
+      "best_label": "best day · 14 orders, Aug 11",
+      "facts": [
+        {
+          "label": "Busiest",
+          "value": "Tue–Thu"
+        },
+        {
+          "label": "Quietest",
+          "value": "Sat–Sun"
+        },
+        {
+          "label": "Zero days",
+          "value": "0",
+          "sub": "in 91 days"
+        }
+      ]
+    },
+    {
+      "type": "progress",
+      "slug": "north-star",
+      "title": "2026 net goal",
+      "dek": "Seller net across TPT + eBay booth",
+      "value": "75%",
+      "context": "**US$11,240** of US$15,000 · 95 days left",
+      "current": {
+        "value": "US$11,240",
+        "num": 11240
+      },
+      "goal": {
+        "value": "US$15,000",
+        "num": 15000
+      },
+      "on_pace": true,
+      "start_label": "US$0",
+      "pace": {
+        "expected_frac": 0.738,
+        "marker_label": "pace",
+        "actual": [
+          620,
+          1410,
+          2350,
+          3180,
+          4020,
+          4890,
+          6010,
+          7890,
+          10230,
+          11240,
+          null,
+          null,
+          null
+        ],
+        "required": [
+          0,
+          1250,
+          2500,
+          3750,
+          5000,
+          6250,
+          7500,
+          8750,
+          10000,
+          11250,
+          12500,
+          13750,
+          15000
+        ],
+        "actual_label": "US$11.2k",
+        "required_label": "US$15k",
+        "required_name": "goal line",
+        "x": [
+          "Jan",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "Sep",
+          "",
+          "",
+          "Dec"
+        ],
+        "x_ticks": [
+          0,
+          9,
+          12
+        ]
+      },
+      "axis_fmt": "{:k}",
+      "facts": [
+        {
+          "label": "Needed / week",
+          "value": "US$277"
+        },
+        {
+          "label": "Running / week",
+          "value": "US$306",
+          "tone": "positive"
+        },
+        {
+          "label": "Projected",
+          "value": "US$15.4k"
+        }
+      ]
+    },
+    {
+      "type": "allocation",
+      "slug": "channel-mix",
+      "title": "Channel mix",
+      "dek": "September seller net by where it sold",
+      "total": "US$1,284",
+      "context": "TPT carries the store; the eBay booth is lumpy but growing",
+      "items": [
+        {
+          "label": "TPT",
+          "num": 1012,
+          "value": "US$1,012"
+        },
+        {
+          "label": "eBay booth",
+          "num": 214,
+          "value": "US$214",
+          "note": "5 sales"
+        },
+        {
+          "label": "Direct",
+          "num": 58,
+          "value": "US$58"
+        }
+      ]
+    },
+    {
+      "type": "kpi",
+      "slug": "partial-data",
+      "title": "Net today",
+      "dek": "Sunday so far · two of three channels reporting",
+      "value": "US$41",
+      "delta": {
+        "value": "−US$6",
+        "note": "vs last Sunday"
+      },
+      "partial": {
+        "ok": 2,
+        "of": 3,
+        "note": "eBay stale 3h"
+      },
+      "spark": {
+        "label": "Cumulative net by hour · last Sunday in grey",
+        "values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          5,
+          9,
+          14,
+          20,
+          27,
+          33,
+          38,
+          41,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "prior": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          3,
+          7,
+          12,
+          18,
+          25,
+          31,
+          39,
+          44,
+          47,
+          51,
+          56,
+          60,
+          66,
+          71,
+          75,
+          79,
+          82,
+          84
+        ],
+        "x": [
+          "12 am",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "11 pm"
+        ]
+      },
+      "facts": [
+        {
+          "label": "TPT",
+          "value": "US$38"
+        },
+        {
+          "label": "Direct",
+          "value": "US$3"
+        },
+        {
+          "label": "eBay",
+          "value": "—",
+          "sub": "retry 3 pm",
+          "tone": "muted"
+        }
+      ]
+    }
+  ]
+}

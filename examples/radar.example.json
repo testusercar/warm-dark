@@ -1,0 +1,105 @@
+{
+  "version": 2,
+  "agent": "Radar",
+  "domain": "Politics",
+  "date": "Sep 25",
+  "footer": "fleet brief · sample sources",
+  "outdir": "out/radar",
+  "cards": [
+    {
+      "type": "radar",
+      "slug": "canada-radar",
+      "title": "Canada",
+      "dek": "Four signals worth your evening",
+      "items": [
+        {
+          "headline": "C-39 splits the CPC on labour",
+          "why": "Union-backed MPs break with Kenney's amendments; whip count Tuesday.",
+          "sources": [
+            "CBC",
+            "Globe and Mail"
+          ],
+          "when": "2h",
+          "signal": "rising"
+        },
+        {
+          "headline": "Quebec: PQ holds ~29%, ten days out",
+          "why": "Vote efficiency puts a majority in reach on a sub-30% share.",
+          "sources": [
+            "338Canada",
+            "Léger"
+          ],
+          "when": "today"
+        },
+        {
+          "headline": "PBO casts doubt on the budget path",
+          "why": "Savings targets lack the detail to score, the office says.",
+          "sources": [
+            "PBO",
+            "Reuters"
+          ],
+          "when": "yesterday"
+        },
+        {
+          "headline": "BC Conservatives up 8 in new poll",
+          "why": "Gap with the NDP is inside the margin for the first time.",
+          "sources": [
+            "Angus Reid"
+          ],
+          "when": "Sep 24"
+        }
+      ],
+      "takeaway": "Labour is the wedge to watch into Quebec's final week."
+    },
+    {
+      "type": "watch",
+      "slug": "watch-week",
+      "title": "Watch this week",
+      "dek": "Dates that can move the story",
+      "points": [
+        {
+          "lead": "Anand in Halifax",
+          "text": "Trade speech; tariff response expected.",
+          "when": "Sat Sep 26"
+        },
+        {
+          "lead": "Quebec leaders' debate",
+          "text": "Last televised debate before advance polls.",
+          "when": "Thu Oct 1"
+        },
+        {
+          "lead": "PBO fiscal update",
+          "text": "Watch the deficit range, not the midpoint.",
+          "when": "Fri Oct 2"
+        },
+        {
+          "lead": "C-39 committee vote",
+          "text": "Whether the labour amendments survive.",
+          "when": "Tue Oct 6"
+        }
+      ],
+      "takeaway": "Oct 1 is the pivot: debate night, then advance polls.",
+      "takeaway_label": "The week in one line"
+    },
+    {
+      "type": "brief",
+      "slug": "canada-brief",
+      "title": "Canada",
+      "points": [
+        {
+          "lead": "C-39 splits the CPC on labour",
+          "text": "Union-backed MPs break with Kenney's amendments."
+        },
+        {
+          "lead": "Quebec, ~10 days out",
+          "text": "PQ at ~29% — a majority is live on a sub-30% vote."
+        },
+        {
+          "lead": "Watch",
+          "text": "PBO budget doubt · BC CPC +8 · Anand on Saturday"
+        }
+      ],
+      "takeaway": "The labour split is the thread to pull into Quebec's final week."
+    }
+  ]
+}
