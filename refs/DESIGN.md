@@ -1,13 +1,13 @@
 # Warm Dark v3 — design rationale
 
-v3 (Aaron, 2026-09-27) is a visual-language refresh toward clean consumer fintech (Wealthsimple, Robinhood): generous whitespace, soft surfaces, clear hierarchy, simple charts, one modern sans. The card inventory, the JSON manifest → Python renderer path, the verdict-colour rules and every QA check are unchanged. Tokens live in `tokens.json` (generated from `render/warmdark/tokens.py`); the one-page visual reference is `specimen.png`.
+v3 (2026-09-27) is a visual-language refresh toward clean consumer fintech: generous whitespace, soft surfaces, clear hierarchy, simple charts, one modern sans. The card inventory, the JSON manifest → Python renderer path, the verdict-colour rules and every QA check are unchanged. Tokens live in `tokens.json` (kept in step with `render/warmdark/tokens.py`); the one-page visual reference is `specimen.png`.
 
 ## What changed from v2, and why
 
 | v2 (editorial, Granola-leaning) | v3 (fintech) | Why |
 |---|---|---|
 | Roboto Slab 62 titles, slab 200 numerals | Inter Display SemiBold 46 titles, Inter Display Light numerals auto-fit 88–172 | One sans family reads as a product UI, not a magazine. The Display cut is drawn for large sizes, so it stays tight without faked tracking. A smaller title lets the number lead. |
-| UPPERCASE tracked 14.5 px eyebrows | Sentence-case Inter Medium 17 labels | Tracked caps are chrome. Sentence case is quieter and matches WS/RH section labels ("Where it sits", "Top merchants"). |
+| UPPERCASE tracked 14.5 px eyebrows | Sentence-case Inter Medium 17 labels | Tracked caps are chrome. Sentence case is quieter and matches fintech section labels ("Where it sits", "Top merchants"). |
 | Everything flat on the canvas, separation by space alone | Soft raised surfaces (`surface #25231f`, radius 24) for facts, ranked lists, options, callouts, empty states | Grouping becomes visible without a single border. A card within the card is how fintech apps chunk information. |
 | 3.2 px current line, 12 px bars, thick dumbbells | 2.6 px current, 1.7 px prior, 1.4 px dashed references, 6–10 px bars, fully rounded caps | Calmer charts, less "dashboard HUD". |
 | Flat area fill | One vertical fade under a current line (16% → 0) | The single permitted gradient: it grounds a line without adding a colour. |

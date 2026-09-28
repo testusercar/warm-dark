@@ -1,0 +1,105 @@
+{
+  "version": 2,
+  "agent": "Finance",
+  "domain": "Finance",
+  "date": "Sep 27",
+  "footer": "Demo books \u00b7 read-only",
+  "outdir": "out/finance-more",
+  "cards": [
+    {
+      "type": "holdings",
+      "slug": "holdings",
+      "title": "Holdings",
+      "dek": "Sample balances \u00b7 CAD",
+      "columns": [
+        "Holding",
+        "Weight",
+        "Value \u00b7 P/L"
+      ],
+      "rows": [
+        {
+          "name": "Cash fund",
+          "sub": "fund \u00b7 4% yield",
+          "value": "C$6,400",
+          "weight": 32,
+          "pl": "+C$80"
+        },
+        {
+          "name": "Metal",
+          "sub": "2.0 oz",
+          "value": "C$12,000",
+          "weight": 60,
+          "pl": "\u2212C$800"
+        },
+        {
+          "name": "Demo coin",
+          "sub": "0.02 units",
+          "value": "C$1,200",
+          "weight": 6,
+          "pl": "+C$100"
+        },
+        {
+          "name": "Demo token",
+          "sub": "4 units",
+          "value": "C$400",
+          "weight": 2,
+          "pl": "\u2212C$20"
+        }
+      ],
+      "total": {
+        "label": "Total",
+        "value": "C$20,000",
+        "pl": "\u2212C$640",
+        "sub": "unrealized"
+      },
+      "facts": [
+        {
+          "label": "Cash share",
+          "value": "32%"
+        },
+        {
+          "label": "Metal vs cost",
+          "value": "C$12,000",
+          "delta": "\u22126.3%"
+        }
+      ]
+    },
+    {
+      "type": "allocation",
+      "slug": "where-cad-sits",
+      "style": "donut",
+      "title": "Where CAD sits",
+      "dek": "C$12,400 across five accounts",
+      "total": "C$12,400",
+      "total_label": "CAD cash",
+      "items": [
+        {
+          "label": "Money market",
+          "num": 6400,
+          "value": "C$6,400"
+        },
+        {
+          "label": "Savings",
+          "num": 3200,
+          "value": "C$3,200"
+        },
+        {
+          "label": "Chequing",
+          "num": 1600,
+          "value": "C$1,600"
+        },
+        {
+          "label": "Reserve",
+          "num": 800,
+          "value": "C$800"
+        },
+        {
+          "label": "Crypto",
+          "num": 400,
+          "value": "C$400"
+        }
+      ],
+      "note": "USD cash US$800 is held separately and not converted. Metal is on the holdings card."
+    }
+  ]
+}

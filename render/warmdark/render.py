@@ -38,7 +38,7 @@ def _strings(o: Any):
 def lint(card: dict[str, Any]) -> list[str]:
     out = []
     if any(_GROSS.search(s) for s in _strings(card)):
-        out.append("mentions 'gross' — fleet money is seller net only unless Aaron asked")
+        out.append("mentions 'gross' — earnings figures are seller net only unless the user asked")
     title = str(card.get("title") or "")
     if len(title) > 28:
         out.append(f"title is {len(title)} chars — aim for 1–3 words")

@@ -1,7 +1,7 @@
-"""Holistic net-worth templates (Ledger): multi_institution_nw, cashflow_sankey,
-nw_delta_weekly, manulife_notes_strip, home_equity_card.
+"""Net-worth templates: multi_institution_nw, cashflow_sankey, nw_delta_weekly,
+notes_strip, home_equity_card.
 
-Money is ownership economics: every figure is Aaron's share, net of what is owed.
+Money is ownership economics: every figure is the user's share, net of what is owed.
 """
 from __future__ import annotations
 
@@ -519,11 +519,11 @@ def nw_delta_weekly(card: Card) -> None:
     card.stack(items + [spring(0.6)] + head + [spring(0.7)] + lower + ([] if f else [spring(0.3)]))
 
 
-# -------------------------------------------------------- manulife_notes_strip
+# -------------------------------------------------------------- notes_strip
 
 
-@template("manulife_notes_strip", "notes_strip", "structured_notes", "manulife_notes")
-def manulife_notes_strip(card: Card) -> None:
+@template("notes_strip", "structured_notes", "manulife_notes_strip", "manulife_notes")
+def notes_strip(card: Card) -> None:
     d = card.card
     c = card.c
     spec = d.get("fmt") or MONEY

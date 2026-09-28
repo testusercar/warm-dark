@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://fleet.local/aaron-fleet-comms/manifest.schema.json",
+  "$id": "https://github.com/testusercar/warm-dark/refs/manifest.schema.json",
   "title": "Warm Dark card manifest",
   "description": "One manifest renders one or more separate PNG cards. v2 is a superset of v1: v1 manifests (hero/metric/alert/bullets/watch) validate and render unchanged. Unknown extra fields are ignored so agents can carry notes.",
   "type": "object",
@@ -18,11 +18,11 @@
     },
     "agent": {
       "type": "string",
-      "description": "Bot name shown top-left, e.g. Ledger, Booth, Radar, Jeeves, Vitals, Max, Scout."
+      "description": "Bot name shown top-left, e.g. Finance, Ops, Health, Research."
     },
     "domain": {
       "type": "string",
-      "description": "Domain after the dot, e.g. Finance, TPT store, Politics."
+      "description": "Domain after the dot, e.g. Finance, Shop, Health."
     },
     "date": {
       "type": "string",
@@ -1074,14 +1074,14 @@
                     },
                     "sub": {
                       "type": "string",
-                      "description": "Institution or basis, e.g. \"Wealthsimple cash + crypto\"."
+                      "description": "Institution or basis, e.g. \"Demo bank cash\"."
                     },
                     "value": {
                       "type": "string"
                     },
                     "num": {
                       "type": "number",
-                      "description": "Aaron's share; negative for liabilities."
+                      "description": "The user's share; negative for liabilities."
                     },
                     "share": {
                       "type": [
@@ -1504,7 +1504,7 @@
                   "number",
                   "string"
                 ],
-                "description": "Ownership: 45, 0.45 or \"45%\" (e.g. Westway % from Coda)."
+                "description": "Ownership: 50, 0.5, or \"50%\"."
               },
               "equity_label": {
                 "type": "string"

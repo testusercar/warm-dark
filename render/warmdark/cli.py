@@ -12,7 +12,7 @@ from .render import render_manifest, types, validate
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(
         prog="warm_dark.py",
-        description="Render Warm Dark fleet→Aaron cards from a JSON manifest. "
+        description="Render Warm Dark cards from a JSON manifest. "
                     "Prints one PNG path per line; QA warnings go to stderr.",
         epilog="Examples:\n"
                "  warm_dark.py cards.json\n"

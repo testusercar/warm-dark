@@ -1,23 +1,23 @@
 {
   "version": 2,
-  "agent": "Vitals",
+  "agent": "Health",
   "domain": "Health",
   "date": "Sep 27",
-  "footer": "Withings · last sync 07:31",
-  "outdir": "out/vitals",
+  "footer": "Demo health sync \u00b7 sample",
+  "outdir": "out/health",
   "cards": [
     {
       "type": "vitals",
       "slug": "sleep",
       "title": "Sleep",
       "dek": "Saturday night",
-      "value": "7h 12m",
+      "value": "7h 30m",
       "delta": {
-        "value": "+24m",
+        "value": "+20m",
         "note": "vs 7-night average"
       },
-      "context": "In bed 11:48 pm → 7:21 am · 7h 12m asleep, 20m awake",
-      "score": 84,
+      "context": "In bed 11:30 pm \u2192 7:00 am \u00b7 7h 30m asleep, 20m awake",
+      "score": 80,
       "score_label": "score",
       "stages": [
         {
@@ -38,7 +38,7 @@
         }
       ],
       "history": {
-        "label": "Last 7 nights · hours asleep",
+        "label": "Last 7 nights \u00b7 hours asleep",
         "values": [
           6.4,
           6.9,
@@ -63,20 +63,20 @@
       "facts": [
         {
           "label": "HRV",
-          "value": "58 ms",
+          "value": "60 ms",
           "delta": "+4"
         },
         {
           "label": "Resting HR",
-          "value": "52 bpm",
+          "value": "54 bpm",
           "delta": {
-            "value": "−1",
+            "value": "\u22121",
             "polarity": "down_good"
           }
         },
         {
           "label": "Breathing",
-          "value": "14.1",
+          "value": "14",
           "sub": "per minute"
         }
       ]
@@ -85,8 +85,8 @@
       "type": "area",
       "slug": "hrv-30",
       "title": "HRV, 30 nights",
-      "dek": "Overnight average · higher is better",
-      "value": "58 ms",
+      "dek": "Overnight average \u00b7 higher is better",
+      "value": "60 ms",
       "delta": {
         "value": "+9%",
         "note": "vs August average"
@@ -158,12 +158,12 @@
       "callouts": [
         {
           "at": 7,
-          "text": "Red-eye to Toronto",
+          "text": "Overnight flight",
           "sub": "41 ms low"
         },
         {
           "at": 23,
-          "text": "Deload week",
+          "text": "Easy week",
           "sub": "62 ms high",
           "positive": true
         }
@@ -177,11 +177,11 @@
       "facts": [
         {
           "label": "7-night avg",
-          "value": "59 ms"
+          "value": "60 ms"
         },
         {
           "label": "Range",
-          "value": "41–62"
+          "value": "41\u201362"
         },
         {
           "label": "Trend",
@@ -195,9 +195,9 @@
       "slug": "bedtime-consistency",
       "title": "Bedtime drift",
       "dek": "Minutes away from your 11:30 pm target, last 13 weeks",
-      "value": "±21 min",
+      "value": "\u00b121 min",
       "delta": {
-        "value": "−9 min",
+        "value": "\u22129 min",
         "polarity": "down_good",
         "note": "tighter than summer"
       },
@@ -329,16 +329,16 @@
         12,
         0
       ],
-      "best_label": "on target · 5 min off",
+      "best_label": "on target \u00b7 5 min off",
       "facts": [
         {
           "label": "Weeknights",
-          "value": "±12 min",
+          "value": "\u00b112 min",
           "tone": "positive"
         },
         {
-          "label": "Fri–Sat",
-          "value": "±38 min"
+          "label": "Fri\u2013Sat",
+          "value": "\u00b138 min"
         },
         {
           "label": "Worst",
