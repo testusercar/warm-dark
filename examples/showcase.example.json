@@ -3,68 +3,109 @@
   "agent": "Fleet",
   "domain": "Showcase",
   "date": "Sep 27",
-  "footer": "aaron-fleet-comms · every card type",
+  "footer": "Warm Dark \u00b7 fictional demo figures",
   "outdir": "out/showcase",
-  "series": false,
+  "series": true,
   "cards": [
     {
       "type": "cover",
       "slug": "01-cover",
-      "kicker": "Week 39 · Sunday close",
-      "title": "Sunday ledger",
-      "dek": "Assets up, gold still under water, spend below typical.",
+      "kicker": "Warm Dark \u00b7 fictional figures",
+      "title": "Type gallery",
+      "dek": "One sample of each card. Every number is a round demo.",
       "items": [
         {
-          "title": "CAD assets",
-          "note": "five accounts, net of card C$137,289",
-          "value": "C$140,022",
-          "delta": "+0.9%"
+          "title": "CAD cash",
+          "note": "net of card C$12,000",
+          "value": "C$12,400",
+          "delta": "+1.6%"
         },
         {
-          "title": "Gold vs break-even",
-          "note": "4.942 oz · needs +6.5% to break even",
-          "value": "−6.1%",
-          "delta": {
-            "value": "C$392/oz",
-            "dir": "down",
-            "good": false
-          }
+          "title": "Net worth",
+          "note": "home equity held out",
+          "value": "C$48,000",
+          "delta": "+C$2,000"
         },
         {
-          "title": "Wealthsimple roster",
-          "note": "balance sheet, all connected",
-          "value": "C$137,289"
+          "title": "Notes",
+          "note": "3 sample notes",
+          "value": "C$12,400"
         },
         {
-          "title": "Spend this week",
-          "note": "23 transactions · Costco the big one",
-          "value": "C$612",
-          "delta": {
-            "value": "−14%",
-            "polarity": "down_good"
-          }
+          "title": "Sleep",
+          "note": "sample night",
+          "value": "7h 30m"
         }
       ],
-      "count_label": "24 card types follow",
-      "right_label": "one of each",
-      "agent": "Ledger",
-      "domain": "Finance",
-      "date": "Sep 27",
-      "footer": "Finance-xai · Wealthsimple · read-only"
+      "count_label": "30 cards follow",
+      "right_label": "swipe \u2192",
+      "agent": "Fleet",
+      "domain": "Showcase",
+      "footer": "Warm Dark \u00b7 fictional demo figures"
     },
     {
       "type": "kpi",
-      "slug": "02-kpi",
+      "slug": "02-01-cad-assets",
+      "title": "CAD cash",
+      "dek": "Five demo-bank accounts at Sunday close",
+      "value": "C$12,400",
+      "delta": {
+        "value": "+C$200",
+        "note": "vs last Sunday"
+      },
+      "context": "Net of the card: **C$12,000**",
+      "composition_label": "Where it sits",
+      "composition": [
+        {
+          "label": "Money market",
+          "num": 6400
+        },
+        {
+          "label": "Savings",
+          "num": 3200
+        },
+        {
+          "label": "Chequing",
+          "num": 1600
+        },
+        {
+          "label": "Reserve",
+          "num": 800
+        },
+        {
+          "label": "Crypto",
+          "num": 400
+        }
+      ],
+      "facts": [
+        {
+          "label": "Card owed",
+          "value": "\u2212C$400",
+          "sub": "statement Oct 3"
+        },
+        {
+          "label": "USD cash",
+          "value": "US$800",
+          "sub": "held separately"
+        }
+      ],
+      "agent": "Finance",
+      "domain": "Finance",
+      "footer": "Demo books \u00b7 read-only"
+    },
+    {
+      "type": "kpi",
+      "slug": "03-net-earnings",
       "title": "Net earnings",
-      "dek": "September to date, after TPT fees",
+      "dek": "September to date, after platform fees",
       "value": "US$1,284",
       "delta": {
         "value": "+28%",
         "note": "vs August, same day"
       },
-      "context": "212 orders · **US$6.06** net per order",
+      "context": "212 orders \u00b7 **US$6.06** net per order",
       "spark": {
-        "label": "Cumulative net · August in grey",
+        "label": "Cumulative net \u00b7 August in grey",
         "values": [
           38,
           91,
@@ -162,7 +203,7 @@
         },
         {
           "label": "Best seller",
-          "value": "Fractions",
+          "value": "Starter kit",
           "sub": "US$214 net"
         },
         {
@@ -171,16 +212,15 @@
           "sub": "est. US$1,410"
         }
       ],
-      "agent": "Booth",
-      "domain": "TPT store",
-      "date": "Sep 27",
-      "footer": "TPT seller dashboard · seller net after fees"
+      "agent": "Shop",
+      "domain": "Demo shop",
+      "footer": "Demo shop \u00b7 seller net after fees"
     },
     {
       "type": "scoreboard",
-      "slug": "03-scoreboard",
+      "slug": "04-week-vs-last",
       "title": "This week",
-      "dek": "Sep 21–27 against Sep 14–20",
+      "dek": "Sep 21\u201327 against Sep 14\u201320",
       "current": {
         "label": "This week",
         "value": "US$342"
@@ -217,14 +257,13 @@
           "fmt": "US${:.2f}"
         }
       ],
-      "agent": "Booth",
-      "domain": "TPT store",
-      "date": "Sep 27",
-      "footer": "TPT seller dashboard · seller net after fees"
+      "agent": "Shop",
+      "domain": "Demo shop",
+      "footer": "Demo shop \u00b7 seller net after fees"
     },
     {
       "type": "line",
-      "slug": "04-line",
+      "slug": "05-net-vs-august",
       "title": "Pacing August",
       "dek": "Cumulative seller net by day of month",
       "value": "+US$280",
@@ -356,17 +395,16 @@
           "sub": "US$85 in a day"
         }
       ],
-      "agent": "Booth",
-      "domain": "TPT store",
-      "date": "Sep 27",
-      "footer": "TPT seller dashboard · seller net after fees"
+      "agent": "Shop",
+      "domain": "Demo shop",
+      "footer": "Demo shop \u00b7 seller net after fees"
     },
     {
       "type": "area",
-      "slug": "05-area",
+      "slug": "06-hrv-30",
       "title": "HRV, 30 nights",
-      "dek": "Overnight average · higher is better",
-      "value": "58 ms",
+      "dek": "Overnight average \u00b7 higher is better",
+      "value": "60 ms",
       "delta": {
         "value": "+9%",
         "note": "vs August average"
@@ -438,12 +476,12 @@
       "callouts": [
         {
           "at": 7,
-          "text": "Red-eye to Toronto",
+          "text": "Overnight flight",
           "sub": "41 ms low"
         },
         {
           "at": 23,
-          "text": "Deload week",
+          "text": "Easy week",
           "sub": "62 ms high",
           "positive": true
         }
@@ -457,11 +495,11 @@
       "facts": [
         {
           "label": "7-night avg",
-          "value": "59 ms"
+          "value": "60 ms"
         },
         {
           "label": "Range",
-          "value": "41–62"
+          "value": "41\u201362"
         },
         {
           "label": "Trend",
@@ -469,23 +507,22 @@
           "tone": "positive"
         }
       ],
-      "agent": "Vitals",
+      "agent": "Health",
       "domain": "Health",
-      "date": "Sep 27",
-      "footer": "Withings · last sync 07:31"
+      "footer": "Demo health sync \u00b7 sample"
     },
     {
       "type": "bars",
-      "slug": "06-bars",
+      "slug": "07-net-by-line",
       "title": "Net by product line",
-      "dek": "September to date · seller net",
+      "dek": "September to date \u00b7 seller net",
       "categories": [
         "Bundles",
-        "Math",
-        "ELA",
+        "Kits",
+        "Guides",
         "Science",
         "Clip art",
-        "Posters"
+        "Prints"
       ],
       "series": [
         {
@@ -517,78 +554,70 @@
           "sub": "3 in Bundles"
         }
       ],
-      "agent": "Booth",
-      "domain": "TPT store",
-      "date": "Sep 27",
-      "footer": "TPT seller dashboard · seller net after fees"
+      "agent": "Shop",
+      "domain": "Demo shop",
+      "footer": "Demo shop \u00b7 seller net after fees"
     },
     {
       "type": "brief",
-      "slug": "07-brief",
-      "title": "Canada",
+      "slug": "08-desk-brief",
+      "title": "Desk",
       "points": [
         {
-          "lead": "C-39 splits the CPC on labour",
-          "text": "Union-backed MPs break with Kenney's amendments."
+          "lead": "Spec split",
+          "text": "The working group is two votes short of a delay."
         },
         {
-          "lead": "Quebec, ~10 days out",
-          "text": "PQ at ~29% — a majority is live on a sub-30% vote."
+          "lead": "Poll",
+          "text": "Still inside the margin \u2014 do not treat the lead as real."
         },
         {
           "lead": "Watch",
-          "text": "PBO budget doubt · BC CPC +8 · Anand on Saturday"
+          "text": "Budget table \u00b7 council packet \u00b7 Thursday comment"
         }
       ],
-      "takeaway": "The labour split is the thread to pull into Quebec's final week.",
-      "agent": "Radar",
-      "domain": "Politics",
-      "date": "Sep 25",
-      "footer": "fleet brief · sample sources"
+      "takeaway": "The missing appendix is the thread to pull.",
+      "agent": "Research",
+      "domain": "Briefing",
+      "footer": "Demo brief \u00b7 sample sources"
     },
     {
       "type": "watch",
-      "slug": "08-watch",
+      "slug": "09-watch-week",
       "title": "Watch this week",
-      "dek": "Dates that can move the story",
+      "dek": "Sample dates that can move the story",
       "points": [
         {
-          "lead": "Anand in Halifax",
-          "text": "Trade speech; tariff response expected.",
-          "when": "Sat Sep 26"
+          "lead": "Working-group call",
+          "text": "Appendix expected on the agenda.",
+          "when": "Tue"
         },
         {
-          "lead": "Quebec leaders' debate",
-          "text": "Last televised debate before advance polls.",
-          "when": "Thu Oct 1"
+          "lead": "Public comment",
+          "text": "Last session before the packet locks.",
+          "when": "Thu"
         },
         {
-          "lead": "PBO fiscal update",
-          "text": "Watch the deficit range, not the midpoint.",
-          "when": "Fri Oct 2"
-        },
-        {
-          "lead": "C-39 committee vote",
-          "text": "Whether the labour amendments survive.",
-          "when": "Tue Oct 6"
+          "lead": "Budget drop",
+          "text": "Watch the range, not the midpoint.",
+          "when": "Fri"
         }
       ],
-      "takeaway": "Oct 1 is the pivot: debate night, then advance polls.",
+      "takeaway": "Thursday is the pivot: comment closes, then the vote.",
       "takeaway_label": "The week in one line",
-      "agent": "Radar",
-      "domain": "Politics",
-      "date": "Sep 25",
-      "footer": "fleet brief · sample sources"
+      "agent": "Research",
+      "domain": "Briefing",
+      "footer": "Demo brief \u00b7 sample sources"
     },
     {
       "type": "alert",
-      "slug": "09-alert",
+      "slug": "10-sweep-blocked",
       "severity": "sev1",
       "status": "Blocked",
-      "since": "since 06:12 · 7h 32m",
+      "since": "since 06:12 \u00b7 7h 32m",
       "title": "Nightly sweep failing",
       "body": "10 of 10 listing sweeps failed at sign-in.",
-      "detail": "eBay identity token expired; the refresh needs your 2FA approval.",
+      "detail": "Marketplace token expired; the refresh needs a 2FA approval.",
       "impact": [
         {
           "label": "Runs failed",
@@ -622,7 +651,7 @@
         },
         {
           "time": "13:44",
-          "text": "Waiting on your 2FA approval",
+          "text": "Waiting on 2FA approval",
           "state": "now"
         },
         {
@@ -633,55 +662,54 @@
       ],
       "next": {
         "label": "Needs you",
-        "owner": "Scout",
-        "text": "Approve the eBay prompt on your phone — Scout resumes within 5 min."
+        "owner": "Ops",
+        "text": "Approve the marketplace prompt on your phone \u2014 the sweep resumes within 5 min."
       },
-      "agent": "Scout",
+      "agent": "Ops",
       "domain": "Ops",
-      "date": "Sep 27",
       "footer": "fleet brief"
     },
     {
       "type": "gap",
-      "slug": "10-gap",
-      "agent": "Booth",
-      "domain": "eBay booth",
-      "footer": "eBay Seller Hub · comps from sold listings",
-      "title": "OD1 price cut",
-      "dek": "New in box · listed 19 days · 3 watchers",
-      "value": "−C$7",
+      "slug": "11-price-cut",
+      "agent": "Shop",
+      "domain": "Marketplace",
+      "footer": "Marketplace comps \u00b7 sold listings",
+      "title": "Bundle A price cut",
+      "dek": "Sample listing \u00b7 19 days \u00b7 3 watchers",
+      "value": "\u2212C$4",
       "delta": {
-        "value": "−4.5%",
+        "value": "\u221210%",
         "polarity": "neutral",
         "note": "ask moves toward comps"
       },
       "before": {
         "label": "Was",
-        "value": "C$155",
-        "num": 155
+        "value": "C$40",
+        "num": 40
       },
       "after": {
         "label": "Now",
-        "value": "C$148",
-        "num": 148
+        "value": "C$36",
+        "num": 36
       },
       "target": {
         "label": "Comps median",
-        "value": "C$145",
-        "num": 145
+        "value": "C$35",
+        "num": 35
       },
       "polarity": "down_good",
       "facts": [
         {
           "label": "Net if sold",
-          "value": "C$126",
+          "value": "C$30",
           "sub": "after fees + ship"
         },
         {
           "label": "Views, 7d",
           "value": "41",
           "delta": {
-            "value": "−12",
+            "value": "\u221212",
             "note": "wk/wk"
           }
         },
@@ -689,24 +717,23 @@
           "label": "Offers",
           "value": "0"
         }
-      ],
-      "date": "Sep 27"
+      ]
     },
     {
       "type": "allocation",
-      "slug": "11-allocation",
+      "slug": "12-channel-mix",
       "title": "Channel mix",
       "dek": "September seller net by where it sold",
       "total": "US$1,284",
-      "context": "TPT carries the store; the eBay booth is lumpy but growing",
+      "context": "The storefront carries the shop; the marketplace is lumpy but growing",
       "items": [
         {
-          "label": "TPT",
+          "label": "Storefront",
           "num": 1012,
           "value": "US$1,012"
         },
         {
-          "label": "eBay booth",
+          "label": "Marketplace",
           "num": 214,
           "value": "US$214",
           "note": "5 sales"
@@ -717,31 +744,30 @@
           "value": "US$58"
         }
       ],
-      "agent": "Booth",
-      "domain": "TPT store",
-      "date": "Sep 27",
-      "footer": "TPT seller dashboard · seller net after fees"
+      "agent": "Shop",
+      "domain": "Demo shop",
+      "footer": "Demo shop \u00b7 seller net after fees"
     },
     {
       "type": "timeline",
-      "slug": "12-timeline",
-      "agent": "Jeeves",
+      "slug": "13-week-ahead",
+      "agent": "Desk",
       "domain": "Home",
-      "footer": "Calendar · household",
+      "footer": "Calendar \u00b7 sample",
       "title": "Week ahead",
-      "dek": "Five things with a time on them",
+      "dek": "Five sample items with a time on them",
       "events": [
         {
           "date": "Sep 26",
           "dow": "Sat",
-          "text": "Furnace filter swapped",
-          "meta": "done · next due Dec",
+          "text": "Filter swapped",
+          "meta": "done \u00b7 next due Dec",
           "state": "past"
         },
         {
           "date": "Sep 27",
           "dow": "Sun",
-          "text": "Call Mom",
+          "text": "Family call",
           "meta": "7:00 pm",
           "state": "today",
           "tag": "today"
@@ -749,131 +775,128 @@
         {
           "date": "Sep 29",
           "dow": "Tue",
-          "text": "Dentist — Dr. Park",
-          "meta": "2:15 pm · 40 min",
+          "text": "Clinic visit",
+          "meta": "2:15 pm \u00b7 40 min",
           "state": "next"
         },
         {
           "date": "Oct 1",
           "dow": "Thu",
-          "text": "Quarterly tax instalment",
-          "meta": "CRA · C$2,100 · auto-pay set",
+          "text": "Tax estimate",
+          "meta": "C$400 \u00b7 auto-pay set",
           "state": "later"
         },
         {
           "date": "Oct 3",
           "dow": "Sat",
           "text": "Card statement due",
-          "meta": "Wealthsimple · C$2,733",
+          "meta": "Demo bank \u00b7 C$400",
           "state": "later"
         }
       ],
-      "note": "Tuesday is the only day with a hard stop — keep 1:30–3:30 clear.",
-      "date": "Sep 27"
+      "note": "Tuesday is the only day with a hard stop \u2014 keep the early afternoon clear."
     },
     {
       "type": "holdings",
-      "slug": "13-holdings",
+      "slug": "14-holdings",
       "title": "Holdings",
-      "dek": "Invested and fund balances · CAD",
+      "dek": "Sample balances \u00b7 CAD",
       "columns": [
         "Holding",
         "Weight",
-        "Value · P/L"
+        "Value \u00b7 P/L"
       ],
       "rows": [
         {
-          "name": "Money market",
-          "sub": "fund · 4.1% yield",
-          "value": "C$61,501",
-          "weight": 65,
-          "pl": "+C$212"
-        },
-        {
-          "name": "Gold",
-          "sub": "4.942 oz",
-          "value": "C$29,951",
+          "name": "Cash fund",
+          "sub": "fund \u00b7 4% yield",
+          "value": "C$6,400",
           "weight": 32,
-          "pl": "−C$1,938"
+          "pl": "+C$80"
         },
         {
-          "name": "Bitcoin",
-          "sub": "0.0214 BTC",
-          "value": "C$2,106",
-          "weight": 2.2,
-          "pl": "+C$218"
+          "name": "Metal",
+          "sub": "2.0 oz",
+          "value": "C$12,000",
+          "weight": 60,
+          "pl": "\u2212C$800"
         },
         {
-          "name": "Ether",
-          "sub": "0.241 ETH",
-          "value": "C$758",
-          "weight": 0.8,
-          "pl": "−C$25"
+          "name": "Demo coin",
+          "sub": "0.02 units",
+          "value": "C$1,200",
+          "weight": 6,
+          "pl": "+C$100"
+        },
+        {
+          "name": "Demo token",
+          "sub": "4 units",
+          "value": "C$400",
+          "weight": 2,
+          "pl": "\u2212C$20"
         }
       ],
       "total": {
         "label": "Total",
-        "value": "C$94,316",
-        "pl": "−C$1,533",
+        "value": "C$20,000",
+        "pl": "\u2212C$640",
         "sub": "unrealized"
       },
       "facts": [
         {
           "label": "Cash share",
-          "value": "65%"
+          "value": "32%"
         },
         {
-          "label": "Gold vs cost",
-          "value": "C$29,951",
-          "delta": "−6.1%"
+          "label": "Metal vs cost",
+          "value": "C$12,000",
+          "delta": "\u22126.3%"
         }
       ],
-      "agent": "Ledger",
+      "agent": "Finance",
       "domain": "Finance",
-      "date": "Sep 27",
-      "footer": "Finance-xai · Wealthsimple · read-only"
+      "footer": "Demo books \u00b7 read-only"
     },
     {
       "type": "roster",
-      "slug": "14-roster",
-      "title": "Wealthsimple",
-      "dek": "Balance sheet · all accounts connected",
+      "slug": "15-03-roster",
+      "title": "Demo bank",
+      "dek": "Balance sheet \u00b7 sample accounts",
       "groups": [
         {
           "label": "Cash",
-          "subtotal": "C$107,208",
+          "subtotal": "C$12,000",
           "items": [
             {
               "label": "Money market",
-              "value": "C$61,501",
-              "num": 61501
+              "value": "C$6,400",
+              "num": 6400
             },
             {
               "label": "Savings",
-              "value": "C$40,017",
-              "num": 40017
+              "value": "C$3,200",
+              "num": 3200
             },
             {
               "label": "Chequing",
-              "value": "C$5,690",
-              "num": 5690
+              "value": "C$1,600",
+              "num": 1600
+            },
+            {
+              "label": "Reserve",
+              "value": "C$800",
+              "num": 800
             }
           ]
         },
         {
           "label": "Invested",
-          "subtotal": "C$32,815",
+          "subtotal": "C$400",
           "items": [
             {
-              "label": "Gold",
-              "note": "4.942 oz",
-              "value": "C$29,951",
-              "num": 29951
-            },
-            {
               "label": "Crypto",
-              "value": "C$2,864",
-              "num": 2864
+              "value": "C$400",
+              "num": 400
             }
           ]
         },
@@ -883,46 +906,45 @@
             {
               "label": "Credit card",
               "note": "due Oct 3",
-              "value": "−C$2,733",
-              "num": -2733
+              "value": "\u2212C$400",
+              "num": -400
             }
           ]
         }
       ],
       "total": {
         "label": "Net CAD",
-        "value": "C$137,289",
-        "sub": "C$140,022 assets − C$2,733 card"
+        "value": "C$12,000",
+        "sub": "C$12,400 assets \u2212 C$400 card"
       },
       "aside": {
         "label": "USD cash",
         "note": "not converted",
-        "value": "US$10,397"
+        "value": "US$800"
       },
-      "agent": "Ledger",
+      "agent": "Finance",
       "domain": "Finance",
-      "date": "Sep 27",
-      "footer": "Finance-xai · Wealthsimple · read-only"
+      "footer": "Demo books \u00b7 read-only"
     },
     {
       "type": "spend",
-      "slug": "15-spend",
+      "slug": "16-04-spend",
       "title": "Spend this week",
-      "dek": "Sep 21–27 · Wealthsimple card + chequing",
-      "value": "C$612",
+      "dek": "Sep 21\u201327 \u00b7 demo card + chequing",
+      "value": "C$240",
       "delta": {
-        "value": "−14%",
+        "value": "\u221214%",
         "polarity": "down_good",
         "note": "vs 8-week typical"
       },
       "days": [
-        42,
-        118,
-        36,
-        64,
-        188,
-        96,
-        68
+        20,
+        40,
+        20,
+        30,
+        60,
+        40,
+        30
       ],
       "day_labels": [
         "M",
@@ -934,102 +956,101 @@
         "S"
       ],
       "rows_label": "Top merchants",
-      "rows_right": "C$468 of C$612",
+      "rows_right": "C$170 of C$240",
       "merchants": [
         {
-          "name": "Costco",
+          "name": "North Market",
           "sub": "groceries",
-          "value": "C$188",
-          "num": 188
+          "value": "C$60",
+          "num": 60
         },
         {
-          "name": "Amazon",
-          "sub": "3 orders",
-          "value": "C$96",
-          "num": 96
-        },
-        {
-          "name": "Esso",
-          "sub": "fuel",
-          "value": "C$72",
-          "num": 72
-        },
-        {
-          "name": "Uber Eats",
+          "name": "Parcel Co",
           "sub": "2 orders",
-          "value": "C$64",
-          "num": 64
+          "value": "C$40",
+          "num": 40
         },
         {
-          "name": "Shoppers",
+          "name": "Fuel Stop",
+          "sub": "fuel",
+          "value": "C$30",
+          "num": 30
+        },
+        {
+          "name": "Late Bite",
+          "sub": "2 orders",
+          "value": "C$20",
+          "num": 20
+        },
+        {
+          "name": "Corner Rx",
           "sub": "pharmacy",
-          "value": "C$48",
-          "num": 48
+          "value": "C$20",
+          "num": 20
         }
       ],
       "facts": [
         {
           "label": "Transactions",
-          "value": "23"
+          "value": "12"
         },
         {
           "label": "Biggest day",
           "value": "Friday",
-          "sub": "C$188 · Costco"
+          "sub": "C$60 \u00b7 North Market"
         },
         {
           "label": "Card owed",
-          "value": "−C$2,733"
+          "value": "\u2212C$400"
         }
       ],
-      "agent": "Ledger",
+      "agent": "Finance",
       "domain": "Finance",
-      "date": "Sep 27",
-      "footer": "Finance-xai · Wealthsimple · read-only"
+      "footer": "Demo books \u00b7 read-only"
     },
     {
       "type": "breakeven",
-      "slug": "16-breakeven",
-      "title": "Gold vs break-even",
-      "dek": "4.942 oz · CAD per oz, weekly close",
-      "value": "−6.1%",
+      "slug": "17-02-gold-breakeven",
+      "title": "Metal vs break-even",
+      "dek": "2.0 oz \u00b7 CAD per oz, weekly close",
+      "value": "\u22126.3%",
       "delta": {
-        "value": "C$392/oz",
+        "value": "C$400/oz",
         "dir": "down",
         "good": false,
-        "note": "under your break-even"
+        "note": "under break-even"
       },
       "price": {
         "name": "spot",
-        "label": "C$6,061",
+        "label": "C$6,000",
         "values": [
-          6150,
-          6185,
-          6210,
-          6240,
-          6205,
-          6280,
-          6330,
-          6310,
-          6385,
-          6420,
-          6395,
-          6470,
-          6510,
-          6490,
-          6540,
+          6200,
+          6300,
+          6400,
+          6500,
+          6450,
           6600,
-          6655,
-          6620,
-          6710,
-          6780,
-          6805,
-          6740,
-          6698,
-          6560,
-          6390,
-          6205,
-          6061
+          6700,
+          6650,
+          6800,
+          6750,
+          6700,
+          6650,
+          6600,
+          6550,
+          6500,
+          6480,
+          6460,
+          6440,
+          6420,
+          6400,
+          6350,
+          6300,
+          6250,
+          6200,
+          6150,
+          6080,
+          6000
         ],
         "x": [
           "Mar 29",
@@ -1070,67 +1091,61 @@
       "steps": [
         {
           "at": 2,
-          "value": 6210,
-          "label": "buy 2.0 oz"
+          "value": 6200,
+          "label": "buy 1.0 oz"
         },
         {
           "at": 14,
-          "value": 6351,
-          "label": "+1.5 oz"
-        },
-        {
-          "at": 22,
-          "value": 6453,
-          "label": "+1.442 oz"
+          "value": 6600,
+          "label": "+1.0 oz"
         }
       ],
       "annotations": [
         {
-          "at": 20,
-          "text": "Peak C$6,805",
-          "sub": "Aug 16 · 5.5% over break-even",
+          "at": 8,
+          "text": "Peak C$6,800",
+          "sub": "above break-even",
           "positive": true
         }
       ],
-      "be_label": "C$6,453",
+      "be_label": "C$6,400",
       "be_name": "break-even",
       "fmt": "{:,.0f}",
       "axis_fmt": "{:,.0f}",
       "facts": [
         {
           "label": "Holding",
-          "value": "4.942 oz"
+          "value": "2.0 oz"
         },
         {
           "label": "Cost",
-          "value": "C$31,889"
+          "value": "C$12,800"
         },
         {
           "label": "Market",
-          "value": "C$29,951",
+          "value": "C$12,000",
           "delta": {
-            "value": "−C$1,938",
+            "value": "\u2212C$800",
             "note": "vs cost"
           }
         }
       ],
-      "agent": "Ledger",
+      "agent": "Finance",
       "domain": "Finance",
-      "date": "Sep 27",
-      "footer": "Finance-xai · Wealthsimple · read-only"
+      "footer": "Demo books \u00b7 read-only"
     },
     {
       "type": "vitals",
-      "slug": "17-vitals",
+      "slug": "18-sleep",
       "title": "Sleep",
       "dek": "Saturday night",
-      "value": "7h 12m",
+      "value": "7h 30m",
       "delta": {
-        "value": "+24m",
+        "value": "+20m",
         "note": "vs 7-night average"
       },
-      "context": "In bed 11:48 pm → 7:21 am · 7h 12m asleep, 20m awake",
-      "score": 84,
+      "context": "In bed 11:30 pm \u2192 7:00 am \u00b7 7h 30m asleep, 20m awake",
+      "score": 80,
       "score_label": "score",
       "stages": [
         {
@@ -1151,7 +1166,7 @@
         }
       ],
       "history": {
-        "label": "Last 7 nights · hours asleep",
+        "label": "Last 7 nights \u00b7 hours asleep",
         "values": [
           6.4,
           6.9,
@@ -1176,91 +1191,88 @@
       "facts": [
         {
           "label": "HRV",
-          "value": "58 ms",
+          "value": "60 ms",
           "delta": "+4"
         },
         {
           "label": "Resting HR",
-          "value": "52 bpm",
+          "value": "54 bpm",
           "delta": {
-            "value": "−1",
+            "value": "\u22121",
             "polarity": "down_good"
           }
         },
         {
           "label": "Breathing",
-          "value": "14.1",
+          "value": "14",
           "sub": "per minute"
         }
       ],
-      "agent": "Vitals",
+      "agent": "Health",
       "domain": "Health",
-      "date": "Sep 27",
-      "footer": "Withings · last sync 07:31"
+      "footer": "Demo health sync \u00b7 sample"
     },
     {
       "type": "radar",
-      "slug": "18-radar",
-      "title": "Canada",
-      "dek": "Four signals worth your evening",
+      "slug": "19-desk-radar",
+      "title": "Desk",
+      "dek": "Four sample signals",
       "items": [
         {
-          "headline": "C-39 splits the CPC on labour",
-          "why": "Union-backed MPs break with Kenney's amendments; whip count Tuesday.",
+          "headline": "Draft spec splits the working group",
+          "why": "Two camps want the vote delayed until the appendix lands.",
           "sources": [
-            "CBC",
-            "Globe and Mail"
+            "Wire",
+            "Daily"
           ],
           "when": "2h",
           "signal": "rising"
         },
         {
-          "headline": "Quebec: PQ holds ~29%, ten days out",
-          "why": "Vote efficiency puts a majority in reach on a sub-30% share.",
+          "headline": "Regional poll stays inside the margin",
+          "why": "The lead changed by less than the error band.",
           "sources": [
-            "338Canada",
-            "Léger"
+            "Pollster"
           ],
           "when": "today"
         },
         {
-          "headline": "PBO casts doubt on the budget path",
-          "why": "Savings targets lack the detail to score, the office says.",
+          "headline": "Budget note flags a missing table",
+          "why": "The savings line cannot be scored without the detail.",
           "sources": [
-            "PBO",
-            "Reuters"
+            "Budget office",
+            "Wire"
           ],
           "when": "yesterday"
         },
         {
-          "headline": "BC Conservatives up 8 in new poll",
-          "why": "Gap with the NDP is inside the margin for the first time.",
+          "headline": "City council packet posted early",
+          "why": "The transit item moved up the agenda.",
           "sources": [
-            "Angus Reid"
+            "City clerk"
           ],
           "when": "Sep 24"
         }
       ],
-      "takeaway": "Labour is the wedge to watch into Quebec's final week.",
-      "agent": "Radar",
-      "domain": "Politics",
-      "date": "Sep 25",
-      "footer": "fleet brief · sample sources"
+      "takeaway": "The spec vote is the item to watch this week.",
+      "agent": "Research",
+      "domain": "Briefing",
+      "footer": "Demo brief \u00b7 sample sources"
     },
     {
       "type": "experiment",
-      "slug": "19-experiment",
-      "agent": "Max",
+      "slug": "20-onboarding-ab",
+      "agent": "Growth",
       "domain": "Growth",
-      "footer": "Maxxit · product analytics",
+      "footer": "Demo analytics",
       "title": "Onboarding test",
-      "dek": "Trial → paid within 14 days",
+      "dek": "Trial \u2192 paid within 14 days",
       "verdict": "Ship B",
       "lift": {
         "value": "+18%",
         "note": "relative lift in conversion"
       },
-      "confidence": "**96%** chance B beats A · 2,410 trials",
+      "confidence": "**96%** chance B beats A \u00b7 2,410 trials",
       "winner": "B",
       "fmt": "{:.1f}%",
       "variants": [
@@ -1291,34 +1303,33 @@
       "facts": [
         {
           "label": "Window",
-          "value": "Sep 6–26"
+          "value": "Sep 6\u201326"
         },
         {
           "label": "Rule",
-          "value": "≥95%, 2 wks"
+          "value": "\u226595%, 2 wks"
         },
         {
           "label": "Est. impact",
-          "value": "+38",
+          "value": "+40",
           "sub": "paid teams / month"
         }
-      ],
-      "date": "Sep 27"
+      ]
     },
     {
       "type": "progress",
-      "slug": "20-progress",
+      "slug": "21-north-star",
       "title": "2026 net goal",
-      "dek": "Seller net across TPT + eBay booth",
+      "dek": "Seller net across storefront and marketplace",
       "value": "75%",
-      "context": "**US$11,240** of US$15,000 · 95 days left",
+      "context": "**US$9,000** of US$12,000 \u00b7 95 days left",
       "current": {
-        "value": "US$11,240",
-        "num": 11240
+        "value": "US$9,000",
+        "num": 9000
       },
       "goal": {
-        "value": "US$15,000",
-        "num": 15000
+        "value": "US$12,000",
+        "num": 12000
       },
       "on_pace": true,
       "start_label": "US$0",
@@ -1326,37 +1337,37 @@
         "expected_frac": 0.738,
         "marker_label": "pace",
         "actual": [
-          620,
-          1410,
-          2350,
-          3180,
-          4020,
-          4890,
-          6010,
-          7890,
-          10230,
-          11240,
+          496,
+          1129,
+          1882,
+          2546,
+          3219,
+          3915,
+          4812,
+          6318,
+          8191,
+          9000,
           null,
           null,
           null
         ],
         "required": [
           0,
-          1250,
-          2500,
-          3750,
+          1000,
+          2000,
+          3000,
+          4000,
           5000,
-          6250,
-          7500,
-          8750,
+          6000,
+          7000,
+          8000,
+          9000,
           10000,
-          11250,
-          12500,
-          13750,
-          15000
+          11000,
+          12000
         ],
-        "actual_label": "US$11.2k",
-        "required_label": "US$15k",
+        "actual_label": "US$9k",
+        "required_label": "US$12k",
         "required_name": "goal line",
         "x": [
           "Jan",
@@ -1383,34 +1394,33 @@
       "facts": [
         {
           "label": "Needed / week",
-          "value": "US$277"
+          "value": "US$240"
         },
         {
           "label": "Running / week",
-          "value": "US$306",
+          "value": "US$280",
           "tone": "positive"
         },
         {
           "label": "Projected",
-          "value": "US$15.4k"
+          "value": "US$12.4k"
         }
       ],
-      "agent": "Booth",
-      "domain": "TPT store",
-      "date": "Sep 27",
-      "footer": "TPT seller dashboard · seller net after fees"
+      "agent": "Shop",
+      "domain": "Demo shop",
+      "footer": "Demo shop \u00b7 seller net after fees"
     },
     {
       "type": "empty",
-      "slug": "21-empty",
+      "slug": "22-no-scans",
       "domain": "Ship",
-      "footer": "FedEx tracking · auto-refresh 30 min",
+      "footer": "Demo carrier \u00b7 auto-refresh 30 min",
       "title": "Carrier scans",
-      "dek": "Palantir #12592 · FedEx 877779458572",
+      "dek": "Order 1042 \u00b7 TRK-1001",
       "message": "No scans yet",
       "skeleton": "list",
-      "reason": "Label created Sep 26; FedEx hasn't picked it up.",
-      "expected": "First scan usually lands by 9 pm on drop-off day. Scout checks again at 6 pm and pings you only if it's still silent.",
+      "reason": "Label created Sep 26; the carrier has not picked it up.",
+      "expected": "First scan usually lands the same evening. Ops checks again at 6 pm.",
       "facts": [
         {
           "label": "Label",
@@ -1425,49 +1435,47 @@
           "value": "Oct 1"
         }
       ],
-      "agent": "Scout",
-      "date": "Sep 27"
+      "agent": "Ops"
     },
     {
       "type": "decision",
-      "slug": "22-decision",
-      "agent": "Jeeves",
+      "slug": "23-paper-renewal",
+      "agent": "Desk",
       "domain": "Subscriptions",
-      "footer": "Jeeves · reply in chat",
-      "title": "Renew the Globe?",
-      "dek": "Auto-renews Oct 2 at C$34.99/mo — up from C$19.99.",
+      "footer": "Legacy shape \u00b7 choose in chat, not on this card",
+      "title": "Renew the paper?",
+      "dek": "Sample auto-renew Oct 2 at C$20/mo \u2014 up from C$12. Choose in the chat widget.",
       "options": [
         {
           "key": "A",
           "label": "Cancel",
-          "detail": "Read via the library's PressReader instead.",
+          "detail": "Read the library copy instead.",
           "recommended": true
         },
         {
           "key": "B",
-          "label": "Drop to digital basic",
-          "detail": "C$19.99/mo · loses Report on Business."
+          "label": "Drop to basic",
+          "detail": "C$12/mo \u00b7 loses the weekend section."
         },
         {
           "key": "C",
           "label": "Renew as is",
-          "detail": "C$420 a year."
+          "detail": "C$240 a year."
         }
       ],
-      "why": "You opened it 3 times in September; Radar already covers ROB headlines.",
+      "why": "Opened 3 times in September; the briefing bot already covers the headlines.",
       "deadline": "Reply by Oct 1, 6 pm",
-      "default": "no reply = A",
-      "date": "Sep 27"
+      "default": "no reply = A"
     },
     {
       "type": "heatmap",
-      "slug": "23-heatmap",
+      "slug": "24-sales-days",
       "title": "Sales days",
       "dek": "Orders per day, last 13 weeks",
       "value": "7.9",
       "delta": {
         "value": "+2.3",
-        "note": "orders/day vs June–July"
+        "note": "orders/day vs June\u2013July"
       },
       "weeks": [
         [
@@ -1597,15 +1605,15 @@
         6,
         1
       ],
-      "best_label": "best day · 14 orders, Aug 11",
+      "best_label": "best day \u00b7 14 orders, Aug 11",
       "facts": [
         {
           "label": "Busiest",
-          "value": "Tue–Thu"
+          "value": "Tue\u2013Thu"
         },
         {
           "label": "Quietest",
-          "value": "Sat–Sun"
+          "value": "Sat\u2013Sun"
         },
         {
           "label": "Zero days",
@@ -1613,20 +1621,19 @@
           "sub": "in 91 days"
         }
       ],
-      "agent": "Booth",
-      "domain": "TPT store",
-      "date": "Sep 27",
-      "footer": "TPT seller dashboard · seller net after fees"
+      "agent": "Shop",
+      "domain": "Demo shop",
+      "footer": "Demo shop \u00b7 seller net after fees"
     },
     {
       "type": "funnel",
-      "slug": "24-funnel",
+      "slug": "25-listing-funnel",
       "title": "Store funnel",
       "dek": "September to date, all listings",
       "value": "1.15%",
       "delta": {
         "value": "+0.21 pts",
-        "note": "view → purchase vs Aug"
+        "note": "view \u2192 purchase vs Aug"
       },
       "stages": [
         {
@@ -1651,24 +1658,23 @@
         }
       ],
       "weakest_label": "biggest drop",
-      "agent": "Booth",
-      "domain": "TPT store",
-      "date": "Sep 27",
-      "footer": "TPT seller dashboard · seller net after fees"
+      "agent": "Shop",
+      "domain": "Demo shop",
+      "footer": "Demo shop \u00b7 seller net after fees"
     },
     {
       "type": "hero",
-      "slug": "25-hero",
+      "slug": "26-shipped-photo",
       "domain": "Ship",
-      "footer": "FedEx · tracking link in chat",
+      "footer": "Demo carrier \u00b7 tracking link in chat",
       "title": "Shipped",
-      "body": "Palantir #12592 · FedEx 877779458572",
+      "body": "Order 1042 \u00b7 TRK-1001",
       "image": "../refs/sample-tracking.png",
       "facts": [
         {
           "label": "Picked up",
           "value": "Sep 26",
-          "sub": "4:12 pm · Mississauga"
+          "sub": "4:12 pm \u00b7 depot"
         },
         {
           "label": "Arrives",
@@ -1676,12 +1682,418 @@
         },
         {
           "label": "Seller net",
-          "value": "C$126",
+          "value": "C$40",
           "sub": "after fees + label"
         }
       ],
-      "agent": "Scout",
-      "date": "Sep 27"
+      "agent": "Ops"
+    },
+    {
+      "type": "multi_institution_nw",
+      "slug": "27-01-net-worth-buckets",
+      "title": "Net worth",
+      "dek": "Every bucket at Sunday close \u00b7 sample ownership share",
+      "total": {
+        "label": "Current net worth",
+        "value": "C$48,000",
+        "num": 48000,
+        "sub": "Home equity held out until closing"
+      },
+      "rows": [
+        {
+          "label": "Cash",
+          "sub": "Demo bank",
+          "value": "C$12,400",
+          "num": 12400
+        },
+        {
+          "label": "USD cash",
+          "sub": "US$3,000 converted",
+          "value": "C$4,000",
+          "num": 4000
+        },
+        {
+          "label": "Metal",
+          "sub": "2.0 oz",
+          "value": "C$12,000",
+          "num": 12000
+        },
+        {
+          "label": "Notes",
+          "sub": "3 notes \u00b7 manual",
+          "value": "C$12,400",
+          "num": 12400
+        },
+        {
+          "label": "Northwind",
+          "sub": "modeled \u00b7 round multiple",
+          "share": "20% stake",
+          "value": "C$8,000",
+          "num": 8000
+        },
+        {
+          "label": "Dormant Co",
+          "sub": "EV = 0 for now",
+          "share": "10% stake",
+          "value": "C$0",
+          "num": 0
+        },
+        {
+          "label": "Credit card",
+          "sub": "due Oct 3",
+          "value": "\u2212C$800",
+          "num": -800
+        },
+        {
+          "label": "Home equity",
+          "sub": "nets the joint mortgage",
+          "share": "50% share",
+          "value": "C$20,000",
+          "num": 20000,
+          "included": false
+        }
+      ],
+      "excluded_label": "Not in current net worth",
+      "excluded_right": "pre-closing",
+      "all_in": {
+        "label": "All-in with home equity",
+        "value": "C$68,000",
+        "num": 68000
+      },
+      "agent": "Finance",
+      "domain": "Finance",
+      "footer": "Demo books \u00b7 manual notes"
+    },
+    {
+      "type": "cashflow_sankey",
+      "slug": "28-02-cashflow",
+      "title": "September cashflow",
+      "dek": "Sep 1\u201327 \u00b7 sample pay in, where it went, where it landed",
+      "value": "C$3,000",
+      "delta": {
+        "value": "+C$400",
+        "note": "saved vs August"
+      },
+      "aside": {
+        "label": "Saving rate",
+        "value": "37%",
+        "tone": "ink"
+      },
+      "stages": [
+        "Income",
+        "Where it went",
+        "Landed in"
+      ],
+      "nodes": [
+        {
+          "id": "pay",
+          "label": "Net pay",
+          "value": "C$8,000"
+        },
+        {
+          "id": "interest",
+          "label": "Interest",
+          "value": "C$200"
+        },
+        {
+          "id": "rent",
+          "label": "Rent",
+          "value": "C$2,400"
+        },
+        {
+          "id": "groceries",
+          "label": "Groceries",
+          "value": "C$1,200"
+        },
+        {
+          "id": "transport",
+          "label": "Transport",
+          "value": "C$400"
+        },
+        {
+          "id": "dining",
+          "label": "Dining",
+          "value": "C$400"
+        },
+        {
+          "id": "other",
+          "label": "Other spend",
+          "value": "C$800"
+        },
+        {
+          "id": "saved",
+          "label": "Saved",
+          "value": "C$3,000",
+          "tone": "good"
+        },
+        {
+          "id": "chequing",
+          "label": "Chequing",
+          "value": "C$2,400"
+        },
+        {
+          "id": "card",
+          "label": "Credit card",
+          "value": "C$2,800"
+        },
+        {
+          "id": "mm",
+          "label": "Money market",
+          "value": "C$1,800"
+        },
+        {
+          "id": "savings",
+          "label": "Savings",
+          "value": "C$1,200"
+        }
+      ],
+      "links": [
+        {
+          "source": "pay",
+          "target": "rent",
+          "num": 2400
+        },
+        {
+          "source": "pay",
+          "target": "groceries",
+          "num": 1200
+        },
+        {
+          "source": "pay",
+          "target": "transport",
+          "num": 400
+        },
+        {
+          "source": "pay",
+          "target": "dining",
+          "num": 400
+        },
+        {
+          "source": "pay",
+          "target": "other",
+          "num": 800
+        },
+        {
+          "source": "pay",
+          "target": "saved",
+          "num": 2800
+        },
+        {
+          "source": "interest",
+          "target": "saved",
+          "num": 200
+        },
+        {
+          "source": "rent",
+          "target": "chequing",
+          "num": 2400
+        },
+        {
+          "source": "groceries",
+          "target": "card",
+          "num": 1200
+        },
+        {
+          "source": "transport",
+          "target": "card",
+          "num": 400
+        },
+        {
+          "source": "dining",
+          "target": "card",
+          "num": 400
+        },
+        {
+          "source": "other",
+          "target": "card",
+          "num": 800
+        },
+        {
+          "source": "saved",
+          "target": "mm",
+          "num": 1800
+        },
+        {
+          "source": "saved",
+          "target": "savings",
+          "num": 1200
+        }
+      ],
+      "agent": "Finance",
+      "domain": "Finance",
+      "footer": "Demo books \u00b7 manual notes"
+    },
+    {
+      "type": "nw_delta_weekly",
+      "slug": "29-03-nw-this-week",
+      "title": "Net worth",
+      "dek": "Sunday close \u00b7 home equity held out until closing",
+      "value": "C$48,000",
+      "num": 48000,
+      "delta": {
+        "value": "+C$2,000",
+        "note": "+4.3% vs last Sunday"
+      },
+      "polarity": "up_good",
+      "prior": {
+        "label": "Sep 20",
+        "value": "C$46,000",
+        "num": 46000
+      },
+      "spark": {
+        "values": [
+          40000,
+          41000,
+          40800,
+          42000,
+          42500,
+          43000,
+          42800,
+          44000,
+          44500,
+          45000,
+          46000,
+          48000
+        ],
+        "x": [
+          "Jul 12",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "Sep 27"
+        ]
+      },
+      "drivers_label": "What moved it",
+      "drivers": [
+        {
+          "label": "Cash saved",
+          "sub": "net pay in, spend out",
+          "value": "+C$1,600",
+          "num": 1600
+        },
+        {
+          "label": "Notes",
+          "sub": "accrual + mark",
+          "value": "+C$600",
+          "num": 600
+        },
+        {
+          "label": "Metal",
+          "sub": "spot \u2212C$100/oz",
+          "value": "\u2212C$200",
+          "num": -200
+        }
+      ],
+      "agent": "Finance",
+      "domain": "Finance",
+      "footer": "Demo books \u00b7 manual notes"
+    },
+    {
+      "type": "notes_strip",
+      "slug": "30-04-notes",
+      "title": "Notes",
+      "dek": "Three sample notes \u00b7 entered by hand",
+      "value_label": "Best-known value",
+      "value": "C$12,400",
+      "delta": {
+        "value": "+C$400",
+        "note": "vs C$12,000 principal"
+      },
+      "context": "Mark on 2 of 3 \u00b7 the third at principal + accrued",
+      "notes": [
+        {
+          "name": "Harbor Index",
+          "sub": "Series A",
+          "principal": {
+            "value": "C$4,000",
+            "num": 4000
+          },
+          "accrued": {
+            "value": "C$200",
+            "num": 200
+          },
+          "mtm": {
+            "value": "C$4,400",
+            "num": 4400
+          },
+          "maturity": "Mar 2028"
+        },
+        {
+          "name": "Harbor Banks",
+          "sub": "Series B",
+          "principal": {
+            "value": "C$4,000",
+            "num": 4000
+          },
+          "accrued": {
+            "value": "C$150",
+            "num": 150
+          },
+          "mtm": {
+            "value": "C$3,900",
+            "num": 3900
+          },
+          "maturity": "Nov 2027"
+        },
+        {
+          "name": "Harbor Dividend",
+          "sub": "Series C",
+          "principal": {
+            "value": "C$4,000",
+            "num": 4000
+          },
+          "accrued": {
+            "value": "C$100",
+            "num": 100
+          },
+          "mtm": null,
+          "maturity": "Jun 2029"
+        }
+      ],
+      "note": "Manual from sample statements \u00b7 no live feed \u00b7 marks as of Sep 15",
+      "agent": "Finance",
+      "domain": "Finance",
+      "footer": "Demo books \u00b7 manual notes"
+    },
+    {
+      "type": "home_equity_card",
+      "slug": "31-05-home-equity",
+      "title": "Home equity",
+      "dek": "Demo house \u00b7 value assumed C$200,000 until closing",
+      "status": "Pre-closing",
+      "value": "C$20,000",
+      "num": 20000,
+      "equity_pct": 50,
+      "equity_label": "Your ownership",
+      "equity_source": "ownership note",
+      "property": {
+        "label": "Property value",
+        "sub": "assumed",
+        "value": "C$200,000",
+        "num": 200000
+      },
+      "mortgage": {
+        "label": "Mortgage",
+        "sub": "demo lender",
+        "value": "C$180,000",
+        "num": 180000
+      },
+      "joint_cash": {
+        "label": "Joint cash",
+        "sub": "demo joint",
+        "value": "C$20,000",
+        "num": 20000
+      },
+      "agent": "Finance",
+      "domain": "Finance",
+      "footer": "Demo books \u00b7 manual notes"
     }
   ]
 }

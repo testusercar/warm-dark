@@ -1,0 +1,402 @@
+{
+  "version": 2,
+  "agent": "Finance",
+  "domain": "Finance",
+  "date": "Sep 27",
+  "footer": "Demo books \u00b7 manual notes",
+  "outdir": "out/finance-networth",
+  "cards": [
+    {
+      "type": "multi_institution_nw",
+      "slug": "01-net-worth-buckets",
+      "title": "Net worth",
+      "dek": "Every bucket at Sunday close \u00b7 sample ownership share",
+      "total": {
+        "label": "Current net worth",
+        "value": "C$48,000",
+        "num": 48000,
+        "sub": "Home equity held out until closing"
+      },
+      "rows": [
+        {
+          "label": "Cash",
+          "sub": "Demo bank",
+          "value": "C$12,400",
+          "num": 12400
+        },
+        {
+          "label": "USD cash",
+          "sub": "US$3,000 converted",
+          "value": "C$4,000",
+          "num": 4000
+        },
+        {
+          "label": "Metal",
+          "sub": "2.0 oz",
+          "value": "C$12,000",
+          "num": 12000
+        },
+        {
+          "label": "Notes",
+          "sub": "3 notes \u00b7 manual",
+          "value": "C$12,400",
+          "num": 12400
+        },
+        {
+          "label": "Northwind",
+          "sub": "modeled \u00b7 round multiple",
+          "share": "20% stake",
+          "value": "C$8,000",
+          "num": 8000
+        },
+        {
+          "label": "Dormant Co",
+          "sub": "EV = 0 for now",
+          "share": "10% stake",
+          "value": "C$0",
+          "num": 0
+        },
+        {
+          "label": "Credit card",
+          "sub": "due Oct 3",
+          "value": "\u2212C$800",
+          "num": -800
+        },
+        {
+          "label": "Home equity",
+          "sub": "nets the joint mortgage",
+          "share": "50% share",
+          "value": "C$20,000",
+          "num": 20000,
+          "included": false
+        }
+      ],
+      "excluded_label": "Not in current net worth",
+      "excluded_right": "pre-closing",
+      "all_in": {
+        "label": "All-in with home equity",
+        "value": "C$68,000",
+        "num": 68000
+      }
+    },
+    {
+      "type": "cashflow_sankey",
+      "slug": "02-cashflow",
+      "title": "September cashflow",
+      "dek": "Sep 1\u201327 \u00b7 sample pay in, where it went, where it landed",
+      "value": "C$3,000",
+      "delta": {
+        "value": "+C$400",
+        "note": "saved vs August"
+      },
+      "aside": {
+        "label": "Saving rate",
+        "value": "37%",
+        "tone": "ink"
+      },
+      "stages": [
+        "Income",
+        "Where it went",
+        "Landed in"
+      ],
+      "nodes": [
+        {
+          "id": "pay",
+          "label": "Net pay",
+          "value": "C$8,000"
+        },
+        {
+          "id": "interest",
+          "label": "Interest",
+          "value": "C$200"
+        },
+        {
+          "id": "rent",
+          "label": "Rent",
+          "value": "C$2,400"
+        },
+        {
+          "id": "groceries",
+          "label": "Groceries",
+          "value": "C$1,200"
+        },
+        {
+          "id": "transport",
+          "label": "Transport",
+          "value": "C$400"
+        },
+        {
+          "id": "dining",
+          "label": "Dining",
+          "value": "C$400"
+        },
+        {
+          "id": "other",
+          "label": "Other spend",
+          "value": "C$800"
+        },
+        {
+          "id": "saved",
+          "label": "Saved",
+          "value": "C$3,000",
+          "tone": "good"
+        },
+        {
+          "id": "chequing",
+          "label": "Chequing",
+          "value": "C$2,400"
+        },
+        {
+          "id": "card",
+          "label": "Credit card",
+          "value": "C$2,800"
+        },
+        {
+          "id": "mm",
+          "label": "Money market",
+          "value": "C$1,800"
+        },
+        {
+          "id": "savings",
+          "label": "Savings",
+          "value": "C$1,200"
+        }
+      ],
+      "links": [
+        {
+          "source": "pay",
+          "target": "rent",
+          "num": 2400
+        },
+        {
+          "source": "pay",
+          "target": "groceries",
+          "num": 1200
+        },
+        {
+          "source": "pay",
+          "target": "transport",
+          "num": 400
+        },
+        {
+          "source": "pay",
+          "target": "dining",
+          "num": 400
+        },
+        {
+          "source": "pay",
+          "target": "other",
+          "num": 800
+        },
+        {
+          "source": "pay",
+          "target": "saved",
+          "num": 2800
+        },
+        {
+          "source": "interest",
+          "target": "saved",
+          "num": 200
+        },
+        {
+          "source": "rent",
+          "target": "chequing",
+          "num": 2400
+        },
+        {
+          "source": "groceries",
+          "target": "card",
+          "num": 1200
+        },
+        {
+          "source": "transport",
+          "target": "card",
+          "num": 400
+        },
+        {
+          "source": "dining",
+          "target": "card",
+          "num": 400
+        },
+        {
+          "source": "other",
+          "target": "card",
+          "num": 800
+        },
+        {
+          "source": "saved",
+          "target": "mm",
+          "num": 1800
+        },
+        {
+          "source": "saved",
+          "target": "savings",
+          "num": 1200
+        }
+      ]
+    },
+    {
+      "type": "nw_delta_weekly",
+      "slug": "03-nw-this-week",
+      "title": "Net worth",
+      "dek": "Sunday close \u00b7 home equity held out until closing",
+      "value": "C$48,000",
+      "num": 48000,
+      "delta": {
+        "value": "+C$2,000",
+        "note": "+4.3% vs last Sunday"
+      },
+      "polarity": "up_good",
+      "prior": {
+        "label": "Sep 20",
+        "value": "C$46,000",
+        "num": 46000
+      },
+      "spark": {
+        "values": [
+          40000,
+          41000,
+          40800,
+          42000,
+          42500,
+          43000,
+          42800,
+          44000,
+          44500,
+          45000,
+          46000,
+          48000
+        ],
+        "x": [
+          "Jul 12",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "Sep 27"
+        ]
+      },
+      "drivers_label": "What moved it",
+      "drivers": [
+        {
+          "label": "Cash saved",
+          "sub": "net pay in, spend out",
+          "value": "+C$1,600",
+          "num": 1600
+        },
+        {
+          "label": "Notes",
+          "sub": "accrual + mark",
+          "value": "+C$600",
+          "num": 600
+        },
+        {
+          "label": "Metal",
+          "sub": "spot \u2212C$100/oz",
+          "value": "\u2212C$200",
+          "num": -200
+        }
+      ]
+    },
+    {
+      "type": "notes_strip",
+      "slug": "04-notes",
+      "title": "Notes",
+      "dek": "Three sample notes \u00b7 entered by hand",
+      "value_label": "Best-known value",
+      "value": "C$12,400",
+      "delta": {
+        "value": "+C$400",
+        "note": "vs C$12,000 principal"
+      },
+      "context": "Mark on 2 of 3 \u00b7 the third at principal + accrued",
+      "notes": [
+        {
+          "name": "Harbor Index",
+          "sub": "Series A",
+          "principal": {
+            "value": "C$4,000",
+            "num": 4000
+          },
+          "accrued": {
+            "value": "C$200",
+            "num": 200
+          },
+          "mtm": {
+            "value": "C$4,400",
+            "num": 4400
+          },
+          "maturity": "Mar 2028"
+        },
+        {
+          "name": "Harbor Banks",
+          "sub": "Series B",
+          "principal": {
+            "value": "C$4,000",
+            "num": 4000
+          },
+          "accrued": {
+            "value": "C$150",
+            "num": 150
+          },
+          "mtm": {
+            "value": "C$3,900",
+            "num": 3900
+          },
+          "maturity": "Nov 2027"
+        },
+        {
+          "name": "Harbor Dividend",
+          "sub": "Series C",
+          "principal": {
+            "value": "C$4,000",
+            "num": 4000
+          },
+          "accrued": {
+            "value": "C$100",
+            "num": 100
+          },
+          "mtm": null,
+          "maturity": "Jun 2029"
+        }
+      ],
+      "note": "Manual from sample statements \u00b7 no live feed \u00b7 marks as of Sep 15"
+    },
+    {
+      "type": "home_equity_card",
+      "slug": "05-home-equity",
+      "title": "Home equity",
+      "dek": "Demo house \u00b7 value assumed C$200,000 until closing",
+      "status": "Pre-closing",
+      "value": "C$20,000",
+      "num": 20000,
+      "equity_pct": 50,
+      "equity_label": "Your ownership",
+      "equity_source": "ownership note",
+      "property": {
+        "label": "Property value",
+        "sub": "assumed",
+        "value": "C$200,000",
+        "num": 200000
+      },
+      "mortgage": {
+        "label": "Mortgage",
+        "sub": "demo lender",
+        "value": "C$180,000",
+        "num": 180000
+      },
+      "joint_cash": {
+        "label": "Joint cash",
+        "sub": "demo joint",
+        "value": "C$20,000",
+        "num": 20000
+      }
+    }
+  ]
+}

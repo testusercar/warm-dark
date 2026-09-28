@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Warm Dark fleet→Aaron card renderer.
+"""Warm Dark card renderer.
 
   python3 warm_dark.py cards.json [--outdir DIR] [--scale 2] [--validate] [--types]
 

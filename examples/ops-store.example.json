@@ -1,24 +1,24 @@
 {
   "version": 2,
-  "agent": "Booth",
-  "domain": "TPT store",
+  "agent": "Shop",
+  "domain": "Demo shop",
   "date": "Sep 27",
-  "footer": "TPT seller dashboard · seller net after fees",
-  "outdir": "out/booth",
+  "footer": "Demo shop \u00b7 seller net after fees",
+  "outdir": "out/ops-store",
   "cards": [
     {
       "type": "kpi",
       "slug": "net-earnings",
       "title": "Net earnings",
-      "dek": "September to date, after TPT fees",
+      "dek": "September to date, after platform fees",
       "value": "US$1,284",
       "delta": {
         "value": "+28%",
         "note": "vs August, same day"
       },
-      "context": "212 orders · **US$6.06** net per order",
+      "context": "212 orders \u00b7 **US$6.06** net per order",
       "spark": {
-        "label": "Cumulative net · August in grey",
+        "label": "Cumulative net \u00b7 August in grey",
         "values": [
           38,
           91,
@@ -116,7 +116,7 @@
         },
         {
           "label": "Best seller",
-          "value": "Fractions",
+          "value": "Starter kit",
           "sub": "US$214 net"
         },
         {
@@ -130,7 +130,7 @@
       "type": "scoreboard",
       "slug": "week-vs-last",
       "title": "This week",
-      "dek": "Sep 21–27 against Sep 14–20",
+      "dek": "Sep 21\u201327 against Sep 14\u201320",
       "current": {
         "label": "This week",
         "value": "US$342"
@@ -426,7 +426,7 @@
         },
         {
           "label": "Best week",
-          "value": "Aug 17–23"
+          "value": "Aug 17\u201323"
         }
       ]
     },
@@ -434,14 +434,14 @@
       "type": "bars",
       "slug": "net-by-line",
       "title": "Net by product line",
-      "dek": "September to date · seller net",
+      "dek": "September to date \u00b7 seller net",
       "categories": [
         "Bundles",
-        "Math",
-        "ELA",
+        "Kits",
+        "Guides",
         "Science",
         "Clip art",
-        "Posters"
+        "Prints"
       ],
       "series": [
         {
@@ -479,7 +479,7 @@
       "slug": "channel-weeks-landscape",
       "format": "landscape",
       "title": "Net by channel",
-      "dek": "Last 6 weeks · seller net, USD",
+      "dek": "Last 6 weeks \u00b7 seller net, USD",
       "stacked": true,
       "categories": [
         "W34",
@@ -491,7 +491,7 @@
       ],
       "series": [
         {
-          "name": "TPT",
+          "name": "Storefront",
           "values": [
             244,
             268,
@@ -502,7 +502,7 @@
           ]
         },
         {
-          "name": "eBay booth",
+          "name": "Marketplace",
           "values": [
             38,
             52,
@@ -535,7 +535,7 @@
       "value": "1.15%",
       "delta": {
         "value": "+0.21 pts",
-        "note": "view → purchase vs Aug"
+        "note": "view \u2192 purchase vs Aug"
       },
       "stages": [
         {
@@ -564,44 +564,44 @@
     {
       "type": "gap",
       "slug": "price-cut",
-      "agent": "Booth",
-      "domain": "eBay booth",
-      "footer": "eBay Seller Hub · comps from sold listings",
-      "title": "OD1 price cut",
-      "dek": "New in box · listed 19 days · 3 watchers",
-      "value": "−C$7",
+      "agent": "Shop",
+      "domain": "Marketplace",
+      "footer": "Marketplace comps \u00b7 sold listings",
+      "title": "Bundle A price cut",
+      "dek": "Sample listing \u00b7 19 days \u00b7 3 watchers",
+      "value": "\u2212C$4",
       "delta": {
-        "value": "−4.5%",
+        "value": "\u221210%",
         "polarity": "neutral",
         "note": "ask moves toward comps"
       },
       "before": {
         "label": "Was",
-        "value": "C$155",
-        "num": 155
+        "value": "C$40",
+        "num": 40
       },
       "after": {
         "label": "Now",
-        "value": "C$148",
-        "num": 148
+        "value": "C$36",
+        "num": 36
       },
       "target": {
         "label": "Comps median",
-        "value": "C$145",
-        "num": 145
+        "value": "C$35",
+        "num": 35
       },
       "polarity": "down_good",
       "facts": [
         {
           "label": "Net if sold",
-          "value": "C$126",
+          "value": "C$30",
           "sub": "after fees + ship"
         },
         {
           "label": "Views, 7d",
           "value": "41",
           "delta": {
-            "value": "−12",
+            "value": "\u221212",
             "note": "wk/wk"
           }
         },
@@ -617,7 +617,7 @@
       "title": "September goal",
       "dek": "Seller net against the US$1,500 month target",
       "value": "US$216",
-      "context": "to go with 3 days left · needs **US$72/day** (running US$48/day)",
+      "context": "to go with 3 days left \u00b7 needs **US$72/day** (running US$48/day)",
       "before": {
         "label": "August",
         "value": "US$1,140",
@@ -644,7 +644,7 @@
       "value": "7.9",
       "delta": {
         "value": "+2.3",
-        "note": "orders/day vs June–July"
+        "note": "orders/day vs June\u2013July"
       },
       "weeks": [
         [
@@ -774,15 +774,15 @@
         6,
         1
       ],
-      "best_label": "best day · 14 orders, Aug 11",
+      "best_label": "best day \u00b7 14 orders, Aug 11",
       "facts": [
         {
           "label": "Busiest",
-          "value": "Tue–Thu"
+          "value": "Tue\u2013Thu"
         },
         {
           "label": "Quietest",
-          "value": "Sat–Sun"
+          "value": "Sat\u2013Sun"
         },
         {
           "label": "Zero days",
@@ -795,16 +795,16 @@
       "type": "progress",
       "slug": "north-star",
       "title": "2026 net goal",
-      "dek": "Seller net across TPT + eBay booth",
+      "dek": "Seller net across storefront and marketplace",
       "value": "75%",
-      "context": "**US$11,240** of US$15,000 · 95 days left",
+      "context": "**US$9,000** of US$12,000 \u00b7 95 days left",
       "current": {
-        "value": "US$11,240",
-        "num": 11240
+        "value": "US$9,000",
+        "num": 9000
       },
       "goal": {
-        "value": "US$15,000",
-        "num": 15000
+        "value": "US$12,000",
+        "num": 12000
       },
       "on_pace": true,
       "start_label": "US$0",
@@ -812,37 +812,37 @@
         "expected_frac": 0.738,
         "marker_label": "pace",
         "actual": [
-          620,
-          1410,
-          2350,
-          3180,
-          4020,
-          4890,
-          6010,
-          7890,
-          10230,
-          11240,
+          496,
+          1129,
+          1882,
+          2546,
+          3219,
+          3915,
+          4812,
+          6318,
+          8191,
+          9000,
           null,
           null,
           null
         ],
         "required": [
           0,
-          1250,
-          2500,
-          3750,
+          1000,
+          2000,
+          3000,
+          4000,
           5000,
-          6250,
-          7500,
-          8750,
+          6000,
+          7000,
+          8000,
+          9000,
           10000,
-          11250,
-          12500,
-          13750,
-          15000
+          11000,
+          12000
         ],
-        "actual_label": "US$11.2k",
-        "required_label": "US$15k",
+        "actual_label": "US$9k",
+        "required_label": "US$12k",
         "required_name": "goal line",
         "x": [
           "Jan",
@@ -869,16 +869,16 @@
       "facts": [
         {
           "label": "Needed / week",
-          "value": "US$277"
+          "value": "US$240"
         },
         {
           "label": "Running / week",
-          "value": "US$306",
+          "value": "US$280",
           "tone": "positive"
         },
         {
           "label": "Projected",
-          "value": "US$15.4k"
+          "value": "US$12.4k"
         }
       ]
     },
@@ -888,15 +888,15 @@
       "title": "Channel mix",
       "dek": "September seller net by where it sold",
       "total": "US$1,284",
-      "context": "TPT carries the store; the eBay booth is lumpy but growing",
+      "context": "The storefront carries the shop; the marketplace is lumpy but growing",
       "items": [
         {
-          "label": "TPT",
+          "label": "Storefront",
           "num": 1012,
           "value": "US$1,012"
         },
         {
-          "label": "eBay booth",
+          "label": "Marketplace",
           "num": 214,
           "value": "US$214",
           "note": "5 sales"
@@ -912,19 +912,19 @@
       "type": "kpi",
       "slug": "partial-data",
       "title": "Net today",
-      "dek": "Sunday so far · two of three channels reporting",
+      "dek": "Sunday so far \u00b7 two of three channels reporting",
       "value": "US$41",
       "delta": {
-        "value": "−US$6",
+        "value": "\u2212US$6",
         "note": "vs last Sunday"
       },
       "partial": {
         "ok": 2,
         "of": 3,
-        "note": "eBay stale 3h"
+        "note": "Marketplace stale 3h"
       },
       "spark": {
-        "label": "Cumulative net by hour · last Sunday in grey",
+        "label": "Cumulative net by hour \u00b7 last Sunday in grey",
         "values": [
           0,
           0,
@@ -1006,7 +1006,7 @@
       },
       "facts": [
         {
-          "label": "TPT",
+          "label": "Storefront",
           "value": "US$38"
         },
         {
@@ -1014,8 +1014,8 @@
           "value": "US$3"
         },
         {
-          "label": "eBay",
-          "value": "—",
+          "label": "Marketplace",
+          "value": "\u2014",
           "sub": "retry 3 pm",
           "tone": "muted"
         }

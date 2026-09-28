@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "agent": "Scout",
+  "agent": "Ops",
   "domain": "Ops",
   "date": "Sep 27",
   "footer": "fleet brief",
@@ -11,10 +11,10 @@
       "slug": "sweep-blocked",
       "severity": "sev1",
       "status": "Blocked",
-      "since": "since 06:12 · 7h 32m",
+      "since": "since 06:12 \u00b7 7h 32m",
       "title": "Nightly sweep failing",
       "body": "10 of 10 listing sweeps failed at sign-in.",
-      "detail": "eBay identity token expired; the refresh needs your 2FA approval.",
+      "detail": "Marketplace token expired; the refresh needs a 2FA approval.",
       "impact": [
         {
           "label": "Runs failed",
@@ -48,7 +48,7 @@
         },
         {
           "time": "13:44",
-          "text": "Waiting on your 2FA approval",
+          "text": "Waiting on 2FA approval",
           "state": "now"
         },
         {
@@ -59,21 +59,21 @@
       ],
       "next": {
         "label": "Needs you",
-        "owner": "Scout",
-        "text": "Approve the eBay prompt on your phone — Scout resumes within 5 min."
+        "owner": "Ops",
+        "text": "Approve the marketplace prompt on your phone \u2014 the sweep resumes within 5 min."
       }
     },
     {
       "type": "alert",
       "slug": "sync-resolved",
-      "agent": "Ledger",
+      "agent": "Finance",
       "domain": "Finance",
-      "footer": "Finance-xai · Wealthsimple · read-only",
+      "footer": "Demo books \u00b7 read-only",
       "severity": "resolved",
-      "since": "down 2h 10m · fixed 13:30",
+      "since": "down 2h 10m \u00b7 fixed 13:30",
       "title": "Syncing again",
-      "body": "Wealthsimple is back; all six accounts are current.",
-      "detail": "Cause: a scheduled Wealthsimple maintenance window.",
+      "body": "The demo bank is back; all six sample accounts are current.",
+      "detail": "Cause: a scheduled maintenance window.",
       "impact": [
         {
           "label": "Downtime",
@@ -98,7 +98,7 @@
         },
         {
           "time": "11:25",
-          "text": "Switched cards to last-known balances",
+          "text": "Cards fell back to last-known balances",
           "state": "done"
         },
         {
@@ -115,23 +115,23 @@
     {
       "type": "timeline",
       "slug": "week-ahead",
-      "agent": "Jeeves",
+      "agent": "Desk",
       "domain": "Home",
-      "footer": "Calendar · household",
+      "footer": "Calendar \u00b7 sample",
       "title": "Week ahead",
-      "dek": "Five things with a time on them",
+      "dek": "Five sample items with a time on them",
       "events": [
         {
           "date": "Sep 26",
           "dow": "Sat",
-          "text": "Furnace filter swapped",
-          "meta": "done · next due Dec",
+          "text": "Filter swapped",
+          "meta": "done \u00b7 next due Dec",
           "state": "past"
         },
         {
           "date": "Sep 27",
           "dow": "Sun",
-          "text": "Call Mom",
+          "text": "Family call",
           "meta": "7:00 pm",
           "state": "today",
           "tag": "today"
@@ -139,71 +139,71 @@
         {
           "date": "Sep 29",
           "dow": "Tue",
-          "text": "Dentist — Dr. Park",
-          "meta": "2:15 pm · 40 min",
+          "text": "Clinic visit",
+          "meta": "2:15 pm \u00b7 40 min",
           "state": "next"
         },
         {
           "date": "Oct 1",
           "dow": "Thu",
-          "text": "Quarterly tax instalment",
-          "meta": "CRA · C$2,100 · auto-pay set",
+          "text": "Tax estimate",
+          "meta": "C$400 \u00b7 auto-pay set",
           "state": "later"
         },
         {
           "date": "Oct 3",
           "dow": "Sat",
           "text": "Card statement due",
-          "meta": "Wealthsimple · C$2,733",
+          "meta": "Demo bank \u00b7 C$400",
           "state": "later"
         }
       ],
-      "note": "Tuesday is the only day with a hard stop — keep 1:30–3:30 clear."
+      "note": "Tuesday is the only day with a hard stop \u2014 keep the early afternoon clear."
     },
     {
       "type": "decision",
-      "slug": "globe-renewal",
-      "agent": "Jeeves",
+      "slug": "paper-renewal",
+      "agent": "Desk",
       "domain": "Subscriptions",
-      "footer": "Jeeves · reply in chat",
-      "title": "Renew the Globe?",
-      "dek": "Auto-renews Oct 2 at C$34.99/mo — up from C$19.99.",
+      "footer": "Legacy shape \u00b7 choose in chat, not on this card",
+      "title": "Renew the paper?",
+      "dek": "Sample auto-renew Oct 2 at C$20/mo \u2014 up from C$12. Choose in the chat widget.",
       "options": [
         {
           "key": "A",
           "label": "Cancel",
-          "detail": "Read via the library's PressReader instead.",
+          "detail": "Read the library copy instead.",
           "recommended": true
         },
         {
           "key": "B",
-          "label": "Drop to digital basic",
-          "detail": "C$19.99/mo · loses Report on Business."
+          "label": "Drop to basic",
+          "detail": "C$12/mo \u00b7 loses the weekend section."
         },
         {
           "key": "C",
           "label": "Renew as is",
-          "detail": "C$420 a year."
+          "detail": "C$240 a year."
         }
       ],
-      "why": "You opened it 3 times in September; Radar already covers ROB headlines.",
+      "why": "Opened 3 times in September; the briefing bot already covers the headlines.",
       "deadline": "Reply by Oct 1, 6 pm",
       "default": "no reply = A"
     },
     {
       "type": "experiment",
       "slug": "onboarding-ab",
-      "agent": "Max",
+      "agent": "Growth",
       "domain": "Growth",
-      "footer": "Maxxit · product analytics",
+      "footer": "Demo analytics",
       "title": "Onboarding test",
-      "dek": "Trial → paid within 14 days",
+      "dek": "Trial \u2192 paid within 14 days",
       "verdict": "Ship B",
       "lift": {
         "value": "+18%",
         "note": "relative lift in conversion"
       },
-      "confidence": "**96%** chance B beats A · 2,410 trials",
+      "confidence": "**96%** chance B beats A \u00b7 2,410 trials",
       "winner": "B",
       "fmt": "{:.1f}%",
       "variants": [
@@ -234,15 +234,15 @@
       "facts": [
         {
           "label": "Window",
-          "value": "Sep 6–26"
+          "value": "Sep 6\u201326"
         },
         {
           "label": "Rule",
-          "value": "≥95%, 2 wks"
+          "value": "\u226595%, 2 wks"
         },
         {
           "label": "Est. impact",
-          "value": "+38",
+          "value": "+40",
           "sub": "paid teams / month"
         }
       ]
@@ -251,13 +251,13 @@
       "type": "empty",
       "slug": "no-scans",
       "domain": "Ship",
-      "footer": "FedEx tracking · auto-refresh 30 min",
+      "footer": "Demo carrier \u00b7 auto-refresh 30 min",
       "title": "Carrier scans",
-      "dek": "Palantir #12592 · FedEx 877779458572",
+      "dek": "Order 1042 \u00b7 TRK-1001",
       "message": "No scans yet",
       "skeleton": "list",
-      "reason": "Label created Sep 26; FedEx hasn't picked it up.",
-      "expected": "First scan usually lands by 9 pm on drop-off day. Scout checks again at 6 pm and pings you only if it's still silent.",
+      "reason": "Label created Sep 26; the carrier has not picked it up.",
+      "expected": "First scan usually lands the same evening. Ops checks again at 6 pm.",
       "facts": [
         {
           "label": "Label",
@@ -277,15 +277,15 @@
       "type": "hero",
       "slug": "shipped-photo",
       "domain": "Ship",
-      "footer": "FedEx · tracking link in chat",
+      "footer": "Demo carrier \u00b7 tracking link in chat",
       "title": "Shipped",
-      "body": "Palantir #12592 · FedEx 877779458572",
+      "body": "Order 1042 \u00b7 TRK-1001",
       "image": "../refs/sample-tracking.png",
       "facts": [
         {
           "label": "Picked up",
           "value": "Sep 26",
-          "sub": "4:12 pm · Mississauga"
+          "sub": "4:12 pm \u00b7 depot"
         },
         {
           "label": "Arrives",
@@ -293,7 +293,7 @@
         },
         {
           "label": "Seller net",
-          "value": "C$126",
+          "value": "C$40",
           "sub": "after fees + label"
         }
       ]
