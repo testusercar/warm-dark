@@ -75,7 +75,7 @@ Inline markup in any text field: `**strong**` (ink semibold) · `{{+12%}}` (oliv
 | Net worth across buckets, some modeled but left out | `multi_institution_nw` | included total + stacked bar + bucket rows; `included: false` rows whispered below |
 | Where a period's money came from, went, and landed | `cashflow_sankey` | income → categories → accounts flows; saved flows olive |
 | Net worth vs last week, and what moved it | `nw_delta_weekly` | NW numeral + one delta; spark + ≤4 signed drivers |
-| Three notes: principal, accrued, mark | `notes_strip` | best-known value + 3 strips. Legacy id `manulife_notes_strip` still resolves |
+| Three notes: principal, accrued, mark | `notes_strip` | best-known value + 3 strips. Legacy id `notes_strip` still resolves |
 | The user's share of a property | `home_equity_card` | equity dollars + formula ledger: value × % − mortgage share + joint cash share |
 
 **Not everything is bullets.** If you wrote three bullets of narrative, you probably want `kpi`, `gap`, `alert`, or `radar`.
@@ -247,7 +247,7 @@ Any card may also set `dek`, `footer`, `agent`/`domain`/`date` overrides, `forma
 // no spark/drivers? "composition":[{label,num}] fills the lower half instead
 
 // notes_strip — exactly 3; "mtm": null = not known yet (strip shows MTM pending, hero uses principal + accrued)
-// Legacy type id manulife_notes_strip still renders. Prefer notes_strip in new manifests.
+// Legacy type id notes_strip still renders. Prefer notes_strip in new manifests.
 {"type":"notes_strip","title":"Notes","value":"C$12,400","delta":{"value":"+C$400","note":"vs C$12,000 principal"},
  "notes":[{"name":"Harbor Index","principal":{"value":"C$4,000","num":4000},"accrued":{"value":"C$200","num":200},
            "mtm":{"value":"C$4,400","num":4400},"maturity":"Mar 2028"}, …],

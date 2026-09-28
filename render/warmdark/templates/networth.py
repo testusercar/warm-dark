@@ -522,7 +522,7 @@ def nw_delta_weekly(card: Card) -> None:
 # -------------------------------------------------------------- notes_strip
 
 
-@template("notes_strip", "structured_notes", "manulife_notes_strip", "manulife_notes")
+@template("notes_strip", "structured_notes", "notes")
 def notes_strip(card: Card) -> None:
     d = card.card
     c = card.c

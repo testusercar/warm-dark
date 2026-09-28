@@ -326,10 +326,10 @@
             "nw_delta",
             "networth_delta",
             "nw_weekly",
-            "manulife_notes_strip",
+            "notes_strip",
             "notes_strip",
             "structured_notes",
-            "manulife_notes",
+            "notes_strip",
             "home_equity_card",
             "home_equity",
             "property_equity"
@@ -1404,10 +1404,10 @@
             "properties": {
               "type": {
                 "enum": [
-                  "manulife_notes_strip",
+                  "notes_strip",
                   "notes_strip",
                   "structured_notes",
-                  "manulife_notes"
+                  "notes_strip"
                 ]
               }
             }

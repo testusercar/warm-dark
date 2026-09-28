@@ -47,6 +47,6 @@ No new aspect ratio and no new brand color without the user explicitly asking fo
 
 If the report is "a number and a delta", it is a `kpi`. If it is "three notes with principal, accrued, and a mark", it is `notes_strip`, not three bullets. Add a type only for a shape the inventory cannot show: excluded-but-modeled rows, a flow that must balance, a formula the user has to see, and similar.
 
-Shipped because roster, allocation, kpi, and spend could not carry them: `multi_institution_nw`, `cashflow_sankey`, `nw_delta_weekly`, `notes_strip`, `home_equity_card`. A legacy type id `manulife_notes_strip` still resolves to `notes_strip` so old manifests render. New manifests should say `notes_strip`.
+Shipped because roster, allocation, kpi, and spend could not carry them: `multi_institution_nw`, `cashflow_sankey`, `nw_delta_weekly`, `notes_strip`, `home_equity_card`. A legacy type id `notes_strip` still resolves to `notes_strip` so old manifests render. New manifests should say `notes_strip`.
 
 When a render fails QA (clip, void, wrong type), fix the template or the example in the same change. Do not socialize a type that warns under `--strict`.
